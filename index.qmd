@@ -7,16 +7,20 @@ title: "MUSA 5080 Portfolio"
 This portfolio documents my learning journey in Public Policy Analytics (MUSA 5080).
 
 ## About This Course
+
 Advanced spatial analysis and data science for urban planning and public policy.
 
 ## Portfolio Structure
-- **Weekly Notes:** My learning reflections and key concepts
-- **Labs:** Completed assignments and analyses
-- **Final Project:** Capstone modeling challenge
+
+-   **Weekly Notes:** My learning reflections and key concepts
+-   **Labs:** Completed assignments and analyses
+-   **Final Project:** Capstone modeling challenge
 
 ## About Me
-Hi! My name is Jennifer, but I go by Jun (June) and I am currently an unemployed student.
+
+Hi! My name is Jennifer, but I go by Jun ( pronounced like June) and I am currently an unemployed student.
 
 ## Contact
-- Email: jjluu@upenn.edu
-- GitHub: jenniferluu6
+
+-   Email: jjluu\@upenn.edu
+-   GitHub: jenniferluu6
