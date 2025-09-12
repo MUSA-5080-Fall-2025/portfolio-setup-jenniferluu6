@@ -84,11 +84,53 @@
     "text": "Before submitting, make sure you’ve: - [ ] Customized _quarto.yml with your name - [ ] Updated index.qmd with your information - [ ] Completed Week 1 notes - [ ] Enabled GitHub Pages - [ ] Verified your website loads correctly - [ ] Submitted your URL to Canvas\n\nNeed help? Don’t struggle alone - reach out during office hours (mine + TAs) or in class!"
   },
   {
+    "objectID": "weekly-notes/week-02-notes.html",
+    "href": "weekly-notes/week-02-notes.html",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "",
+    "text": "[List main concepts from lecture]\n[Technical skills covered]"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-02-notes.html#key-concepts-learned",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "",
+    "text": "[List main concepts from lecture]\n[Technical skills covered]"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#coding-techniques",
+    "href": "weekly-notes/week-02-notes.html#coding-techniques",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Coding Techniques",
+    "text": "Coding Techniques\n\n[New R functions or approaches]\n[Quarto features learned]"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#questions-challenges",
+    "href": "weekly-notes/week-02-notes.html#questions-challenges",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Questions & Challenges",
+    "text": "Questions & Challenges\n\n[What I didn’t fully understand]\n[Areas needing more practice]"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#connections-to-policy",
+    "href": "weekly-notes/week-02-notes.html#connections-to-policy",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Connections to Policy",
+    "text": "Connections to Policy\n\n[How this week’s content applies to real policy work]"
+  },
+  {
+    "objectID": "weekly-notes/week-02-notes.html#reflection",
+    "href": "weekly-notes/week-02-notes.html#reflection",
+    "title": "Week 1 Notes - Course Introduction",
+    "section": "Reflection",
+    "text": "Reflection\n\n[What was most interesting]\n[How I’ll apply this knowledge]"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "MUSA 5080 Portfolio",
     "section": "",
-    "text": "This portfolio documents my learning journey in Public Policy Analytics (MUSA 5080).\n\n\nAdvanced spatial analysis and data science for urban planning and public policy.\n\n\n\n\nWeekly Notes: My learning reflections and key concepts\nLabs: Completed assignments and analyses\nFinal Project: Capstone modeling challenge\n\n\n\n\nHi! My name is Jennifer, but I go by Jun ( pronounced like June) and I am currently an unemployed student.\n\n\n\n\nEmail: jjluu@upenn.edu\nGitHub: jenniferluu6"
+    "text": "Welcome to my MUSA 5080 Portfolio! Please follow me on my journey through Public Policy Analytics (MUSA 5080). Hopefully I will be able to analyze spatial data and create meaningful visualizations at the end of this course :O\n\n\nAdvanced spatial analysis and data science for urban planning and public policy.\n\n\n\n\nWeekly Notes: My learning reflections and key concepts\nLabs: Completed assignments and analyses\nFinal Project: Capstone modeling challenge\n\n\n\n\nHi, my name is Jun and I recently started my Masters of Urban Spatial Analytics at The University of Pennsylvania! My background is in affordable housing and community development construction engineering. Though I loved my work, I decided that I wanted to do research that would push new projects that I believe in instead of building the projects that had already been determined.\nTo learn more about my background, please refer to the “About” section located in the banner across the top of this page!\n\n\n\n\nEmail: jjluu@upenn.edu\nGitHub: jenniferluu6"
   },
   {
     "objectID": "index.html#about-this-course",
@@ -109,7 +151,7 @@
     "href": "index.html#about-me",
     "title": "MUSA 5080 Portfolio",
     "section": "",
-    "text": "Hi! My name is Jennifer, but I go by Jun ( pronounced like June) and I am currently an unemployed student."
+    "text": "Hi, my name is Jun and I recently started my Masters of Urban Spatial Analytics at The University of Pennsylvania! My background is in affordable housing and community development construction engineering. Though I loved my work, I decided that I wanted to do research that would push new projects that I believe in instead of building the projects that had already been determined.\nTo learn more about my background, please refer to the “About” section located in the banner across the top of this page!"
   },
   {
     "objectID": "index.html#contact",
@@ -119,45 +161,87 @@
     "text": "Email: jjluu@upenn.edu\nGitHub: jenniferluu6"
   },
   {
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 4",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 4 project."
+  },
+  {
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 3",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 3 project."
+  },
+  {
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 2",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 2 project."
+  },
+  {
+    "objectID": "labs/lab-01.html",
+    "href": "labs/lab-01.html",
+    "title": "Lab 1",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 1 project."
+  },
+  {
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 5",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 5 project."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "My name is Jennifer Luu, but I go by Jun (pronounced like June)! I am discovering my path of blending my lived experience and background in construction engineering with urban spatial analytics.\nI think the most effective way to tell you my story is by going through the cities I’ve lived and learned in. If you see a city you’re thinking about visiting, let me know! I would love to share recommendations or even help you plan your trip!\n\nMy Journey\nLeesburg, VA\nI grew up 1-1.5h outside of Washington D.C. It was in this politics-centered city where my flame of affordable housing ignited.\nBlacksburg, VA\nMy interest in working in affordable housing led me to Virginia Tech, where I majored in Construction Engineering and Management. GO HOKIES!\nChicago, IL\nI wanted to integrate myself into a city that with a strong history of housing reform and policy. It was here that I started to think about how my work in different construction projects were affecting the community that I was in. I began a personal research project in an attempt to quantify these effects.\nLos Angeles, CA\nDuring my time in LA, my research interests both expanded and deepened. I was able to see how housing directly affected healthcare and education.\nNew York City, NY\nI had the amazing opportunity to work on my dream project- the thing that I had worked for all through undergrad: renovation of low-income housing in East Brooklyn. I could go on about this, but I will spare you the reading. (Feel free to reach out to me if you want to talk about it!)\nPhiladelphia, PA\nIt all led to right here, The University of Pennsylvania. Though I loved working in affordable housing construction and it felt like that was what I was running towards since I was 16, I realized something else that I wanted. It is extremely important to do the work in the field, but I wanted to do research to support future projects.\nThanks for reading! I hope you’ll follow me to see where I go next! Maybe it’ll be another city, but maybe I’ll stay right here in Philly."
+  },
+  {
     "objectID": "weekly-notes/week-01-notes.html",
     "href": "weekly-notes/week-01-notes.html",
     "title": "Week 1 Notes - Course Introduction",
     "section": "",
-    "text": "[List main concepts from lecture]\n[Technical skills covered]"
+    "text": "Git - tracks changes, collaboration tool for teams\n\nrepo - folder containing your project files\npush - sends changes to GitHub\npull - get the latest changes fro GitHub\n\nGitHub - cloud hosting for Git repos, creates deployable websites to share projects\nGitHub Classroom- creates individual repos for students\nWhy Quarto:\n\nreproducible research:\n\ncode + explanation in one place\nothers can run your analysis\n\ncareer relevance:\n\nindustry standard\n\n\nWhy R:\n\nfree & open source\nreproducible research\nindustry standard\n\nTidyverse - uses “tibbles” (enhanced data frames)"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#key-concepts-learned",
     "href": "weekly-notes/week-01-notes.html#key-concepts-learned",
     "title": "Week 1 Notes - Course Introduction",
     "section": "",
-    "text": "[List main concepts from lecture]\n[Technical skills covered]"
+    "text": "Git - tracks changes, collaboration tool for teams\n\nrepo - folder containing your project files\npush - sends changes to GitHub\npull - get the latest changes fro GitHub\n\nGitHub - cloud hosting for Git repos, creates deployable websites to share projects\nGitHub Classroom- creates individual repos for students\nWhy Quarto:\n\nreproducible research:\n\ncode + explanation in one place\nothers can run your analysis\n\ncareer relevance:\n\nindustry standard\n\n\nWhy R:\n\nfree & open source\nreproducible research\nindustry standard\n\nTidyverse - uses “tibbles” (enhanced data frames)"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#coding-techniques",
     "href": "weekly-notes/week-01-notes.html#coding-techniques",
     "title": "Week 1 Notes - Course Introduction",
     "section": "Coding Techniques",
-    "text": "Coding Techniques\n\n[New R functions or approaches]\n[Quarto features learned]"
+    "text": "Coding Techniques\nConvert data frame to tibble:\n#Traditional Data Frame\nclass(data)\n# Convert to tibble\ncar_data &lt;- as_tibble(data)\nclass(car_data)\nCommonly used:\n\nselect() - choose columns\nfilter() - choose rows\n\nmutate() - create new variables\nsummarize() - calculate statistics\ngroup_by() - operate on groups"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#questions-challenges",
     "href": "weekly-notes/week-01-notes.html#questions-challenges",
     "title": "Week 1 Notes - Course Introduction",
     "section": "Questions & Challenges",
-    "text": "Questions & Challenges\n\n[What I didn’t fully understand]\n[Areas needing more practice]"
+    "text": "Questions & Challenges\n\nNeed to practice using pipelines!"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#connections-to-policy",
     "href": "weekly-notes/week-01-notes.html#connections-to-policy",
     "title": "Week 1 Notes - Course Introduction",
     "section": "Connections to Policy",
-    "text": "Connections to Policy\n\n[How this week’s content applies to real policy work]"
+    "text": "Connections to Policy\nThis semester we’ll use these skills for:\n\nCensus data analysis\nNeighborhood change studies\nPredictive modeling for resource allocation\nHousing market analysis\nTransportation equity assessment"
   },
   {
     "objectID": "weekly-notes/week-01-notes.html#reflection",
     "href": "weekly-notes/week-01-notes.html#reflection",
     "title": "Week 1 Notes - Course Introduction",
     "section": "Reflection",
-    "text": "Reflection\n\n[What was most interesting]\n[How I’ll apply this knowledge]"
+    "text": "Reflection\nI am excited to learn how to use these things that we have learned on a project. I am interested in what a pipeline will look like for me."
   }
 ]

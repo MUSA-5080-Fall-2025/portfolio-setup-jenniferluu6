@@ -4,7 +4,7 @@ title: "MUSA 5080 Portfolio"
 
 # Welcome to My Portfolio
 
-This portfolio documents my learning journey in Public Policy Analytics (MUSA 5080).
+Welcome to my MUSA 5080 Portfolio! Please follow me on my journey through Public Policy Analytics (MUSA 5080). Hopefully I will be able to analyze spatial data and create meaningful visualizations at the end of this course :O
 
 ## About This Course
 
@@ -18,7 +18,9 @@ Advanced spatial analysis and data science for urban planning and public policy.
 
 ## About Me
 
-Hi! My name is Jennifer, but I go by Jun ( pronounced like June) and I am currently an unemployed student.
+Hi, my name is Jun and I recently started my Masters of Urban Spatial Analytics at The University of Pennsylvania! My background is in affordable housing and community development construction engineering. Though I loved my work, I decided that I wanted to do research that would push new projects that I believe in instead of building the projects that had already been determined.
+
+To learn more about my background, please refer to the "About" section located in the banner across the top of this page!
 
 ## Contact
 

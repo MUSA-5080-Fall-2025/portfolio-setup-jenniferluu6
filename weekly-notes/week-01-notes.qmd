@@ -4,20 +4,81 @@ date: "2025-09-08"
 ---
 
 ## Key Concepts Learned
-- [List main concepts from lecture]
-- [Technical skills covered]
+
+**Git** - tracks changes, collaboration tool for teams
+
+-   repo - folder containing your project files
+
+-   push - sends changes to GitHub
+
+-   pull - get the latest changes fro GitHub
+
+**GitHub** - cloud hosting for Git repos, creates deployable websites to share projects
+
+**GitHub** **Classroom**- creates individual repos for students
+
+**Why Quarto:**
+
+-   reproducible research:
+
+    -   code + explanation in one place
+
+    -   others can run your analysis
+
+-   career relevance:
+
+    -   industry standard
+
+**Why R:**
+
+-   free & open source
+
+-   reproducible research
+
+-   industry standard
+
+Tidyverse - uses "tibbles" (enhanced data frames)
 
 ## Coding Techniques
-- [New R functions or approaches]
-- [Quarto features learned]
+
+**Convert data frame to tibble:**
+
+#Traditional Data Frame
+
+class(data)
+
+\# Convert to tibble
+
+car_data \<- as_tibble(data)
+
+class(car_data)
+
+**Commonly used:**
+
+-   `select()` - choose columns
+-   `filter()` - choose rows\
+-   `mutate()` - create new variables
+-   `summarize()` - calculate statistics
+-   `group_by()` - operate on groups
 
 ## Questions & Challenges
-- [What I didn't fully understand]
-- [Areas needing more practice]
+
+-   Need to practice using pipelines!
 
 ## Connections to Policy
-- [How this week's content applies to real policy work]
+
+**This semester we'll use these skills for:**
+
+-   Census data analysis
+
+-   Neighborhood change studies
+
+-   Predictive modeling for resource allocation
+
+-   Housing market analysis
+
+-   Transportation equity assessment
 
 ## Reflection
-- [What was most interesting]
-- [How I'll apply this knowledge]
+
+I am excited to learn how to use these things that we have learned on a project. I am interested in what a pipeline will look like for me.
