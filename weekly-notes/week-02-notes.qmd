@@ -1,23 +1,92 @@
 ---
 title: "Week 2 notes- Course Introduction"
-date: "9/
+date: "9/15/25"
 ---
 
 ## Key Concepts Learned
-- [List main concepts from lecture]
-- [Technical skills covered]
+
+**What is an algorithm?**
+
+A set of rules or instructions for solving a problem or completing a task
+
+-   **Inputs** ("features", "predictors", "independent variables", "x")
+
+-   **Outputs** ("labels", "outcome", "dependent variable", "y")
+
+**Data Science** - Computer science/engineering focus on algorithms and methods
+
+**Data Analytics** - Application of data science methods to other disciplines
+
+**Machine Learning** - Algorithms for classification & prediction that learn from data
+
+**AI** - Algorithms that adjust and improve across iterations (neural networks, etc.)
+
+**TIGER/Line Files**
+
+-   Geographic boundaries (shapefiles)
+-   Census tracts, counties, states
+-   Now released as shapefiles (easier to use!)
+
+**Historical Data Sources:**
+
+-   NHGIS (nhgis.org) - Historical census data
+-   Neighborhood Change Database
+-   Longitudinal Tract Database - Track changes over time
 
 ## Coding Techniques
-- [New R functions or approaches]
-- [Quarto features learned]
+
+library(tidycensus)
+
+library(tidyverse)
+
+library(knitr)
+
+1.  `case_when()`
+
+2.  `get_acs()`
+
+3.  `mutate()`
+
+4.  `select()`
+
+5.  `str_remove()`, `str_extract()`, `str_replace()`
+
+6.  `kable()`
 
 ## Questions & Challenges
-- [What I didn't fully understand]
-- [Areas needing more practice]
+
+I need to finish Lab 0, so that I can practice the different coding functions.
 
 ## Connections to Policy
-- [How this week's content applies to real policy work]
+
+1.  **Proxy:** What would you *use* to stand in for what you *want*?
+2.  **Blind spot:** What data gap or historical bias could skew results?
+3.  **Harm + Guardrail:** Who could be harmed, and one simple safeguard?
+
+-   **Criminal Justice** - Recidivism risk scores for bail and sentencing decisions
+
+-   **Housing & Finance** - Mortgage lending and tenant screening algorithms
+
+-   **Healthcare** - Patient care prioritization and resource allocation
+
+**Long history of government data collection:**
+
+-   Civic registration systems
+
+-   Census data
+
+-   Administrative records
+
+-   Operations research (post-WWII)
+
+**Census data is the foundation for:**
+
+-   Understanding community demographics
+
+-   Allocating government resources\
+
+-   Tracking neighborhood change
 
 ## Reflection
-- [What was most interesting]
-- [How I'll apply this knowledge]
+
+I think it is pretty nerve-racking thinking about how the data that I have/choose to use could affect the outcome of someone's life. It makes me want to be as careful as possible to minimize bias as much as possible. This has made me very slow to answer data analysis questions in class. 
