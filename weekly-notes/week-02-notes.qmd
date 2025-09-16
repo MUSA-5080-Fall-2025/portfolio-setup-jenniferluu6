@@ -1,5 +1,5 @@
 ---
-title: "Week 2 notes- Course Introduction"
+title: "Week 2 notes"
 date: "9/15/25"
 ---
 
