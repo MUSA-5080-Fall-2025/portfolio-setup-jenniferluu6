@@ -1,0 +1,101 @@
+---
+title: "Week 3 notes"
+date: "9/22/25"
+---
+
+## Key Concepts Learned
+
+Anscombe's Quartet and the limits of summary statistics
+
+\- Depending on the way information is visualized, it can show
+completely different patterns.
+
+\- "How to lie with stats/maps"
+
+\- Outliers may represent important communities
+
+\- Relationships aren't always linear
+
+Exploratory Data Analysis is detective work
+
+**Data** → **Aesthetics** → **Geometries** → **Visual**
+
+\- **Data:** Your data set (census data, survey responses, etc.)
+
+\- **Aesthetics:** What variables map to visual properties (x, y, color,
+size)
+
+\- **Geometries:** How to display the data (points, bars, lines)
+
+\- **Additional layers:** Scales, themes, facets, annotations
+
+## Coding Techniques
+
+`ggplot(data = your_data) +   aes(x = variable1, y = variable2) +   geom_something() +   additional_layers()`
+
+**Aesthetics map data to visual properties:**
+
+-   `x`, `y` - position
+
+-   `color` - point/line color
+
+-   `fill` - area fill color
+
+-   `size` - point/line size
+
+-   `shape` - point shape
+
+-   `alpha` - transparency
+
+-   `left_join()` - Keep all rows from left dataset
+
+-   `right_join()` - Keep all rows from right dataset
+
+-   `inner_join()` - Keep only rows that match in both
+
+-   `full_join()` - Keep all rows from both datasets
+
+**Important:** Aesthetics go inside `aes()`, constants go outside
+
+## Questions & Challenges
+
+**Pattern:** Smaller populations have higher uncertainty
+
+**Ethical implication:** These communities might be systematically under
+counted\
+
+1.  **Report the corresponding MOEs of ACS estimates** - Always include
+    margin of error values
+2.  **Include a footnote when not reporting MOEs** - Explicitly
+    acknowledge omission\
+3.  **Provide context for (un)reliability** - Use coefficient of
+    variation (CV):
+    -   CV \< 12% = reliable (green coding)
+    -   CV 12-40% = somewhat reliable (yellow)
+    -   CV \> 40% = unreliable (red coding)
+4.  **Reduce statistical uncertainty** - Collapse data detail, aggregate
+    geographies, use multi-year estimates
+5.  **Always conduct statistical significance tests** when comparing ACS
+    estimates over time
+
+## Connections to Policy
+
+**Research finding:** Only **27% of planners** warn users about
+unreliable ACS data
+
+\- Most planners don't report margins of error
+
+\- Many lack training on statistical uncertainty
+
+**Common problems in government data presentation:**
+
+\- Misleading scales or axes
+
+\- Cherry-picked time periods
+
+\- **Hidden or ignored uncertainty**
+
+\- Missing context about data reliability
+
+## Reflection
+Reminder to study through definitions more closely. 

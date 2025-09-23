@@ -86,44 +86,86 @@
   {
     "objectID": "weekly-notes/week-02-notes.html",
     "href": "weekly-notes/week-02-notes.html",
-    "title": "Week 2 notes- Course Introduction",
+    "title": "Week 2 notes",
     "section": "",
     "text": "What is an algorithm?\nA set of rules or instructions for solving a problem or completing a task\n\nInputs (“features”, “predictors”, “independent variables”, “x”)\nOutputs (“labels”, “outcome”, “dependent variable”, “y”)\n\nData Science - Computer science/engineering focus on algorithms and methods\nData Analytics - Application of data science methods to other disciplines\nMachine Learning - Algorithms for classification & prediction that learn from data\nAI - Algorithms that adjust and improve across iterations (neural networks, etc.)\nTIGER/Line Files\n\nGeographic boundaries (shapefiles)\nCensus tracts, counties, states\nNow released as shapefiles (easier to use!)\n\nHistorical Data Sources:\n\nNHGIS (nhgis.org) - Historical census data\nNeighborhood Change Database\nLongitudinal Tract Database - Track changes over time"
   },
   {
     "objectID": "weekly-notes/week-02-notes.html#key-concepts-learned",
     "href": "weekly-notes/week-02-notes.html#key-concepts-learned",
-    "title": "Week 2 notes- Course Introduction",
+    "title": "Week 2 notes",
     "section": "",
     "text": "What is an algorithm?\nA set of rules or instructions for solving a problem or completing a task\n\nInputs (“features”, “predictors”, “independent variables”, “x”)\nOutputs (“labels”, “outcome”, “dependent variable”, “y”)\n\nData Science - Computer science/engineering focus on algorithms and methods\nData Analytics - Application of data science methods to other disciplines\nMachine Learning - Algorithms for classification & prediction that learn from data\nAI - Algorithms that adjust and improve across iterations (neural networks, etc.)\nTIGER/Line Files\n\nGeographic boundaries (shapefiles)\nCensus tracts, counties, states\nNow released as shapefiles (easier to use!)\n\nHistorical Data Sources:\n\nNHGIS (nhgis.org) - Historical census data\nNeighborhood Change Database\nLongitudinal Tract Database - Track changes over time"
   },
   {
     "objectID": "weekly-notes/week-02-notes.html#coding-techniques",
     "href": "weekly-notes/week-02-notes.html#coding-techniques",
-    "title": "Week 2 notes- Course Introduction",
+    "title": "Week 2 notes",
     "section": "Coding Techniques",
     "text": "Coding Techniques\nlibrary(tidycensus)\nlibrary(tidyverse)\nlibrary(knitr)\n\ncase_when()\nget_acs()\nmutate()\nselect()\nstr_remove(), str_extract(), str_replace()\nkable()"
   },
   {
     "objectID": "weekly-notes/week-02-notes.html#questions-challenges",
     "href": "weekly-notes/week-02-notes.html#questions-challenges",
-    "title": "Week 2 notes- Course Introduction",
+    "title": "Week 2 notes",
     "section": "Questions & Challenges",
     "text": "Questions & Challenges\nI need to finish Lab 0, so that I can practice the different coding functions."
   },
   {
     "objectID": "weekly-notes/week-02-notes.html#connections-to-policy",
     "href": "weekly-notes/week-02-notes.html#connections-to-policy",
-    "title": "Week 2 notes- Course Introduction",
+    "title": "Week 2 notes",
     "section": "Connections to Policy",
     "text": "Connections to Policy\n\nProxy: What would you use to stand in for what you want?\nBlind spot: What data gap or historical bias could skew results?\nHarm + Guardrail: Who could be harmed, and one simple safeguard?\n\n\nCriminal Justice - Recidivism risk scores for bail and sentencing decisions\nHousing & Finance - Mortgage lending and tenant screening algorithms\nHealthcare - Patient care prioritization and resource allocation\n\nLong history of government data collection:\n\nCivic registration systems\nCensus data\nAdministrative records\nOperations research (post-WWII)\n\nCensus data is the foundation for:\n\nUnderstanding community demographics\nAllocating government resources\n\nTracking neighborhood change"
   },
   {
     "objectID": "weekly-notes/week-02-notes.html#reflection",
     "href": "weekly-notes/week-02-notes.html#reflection",
-    "title": "Week 2 notes- Course Introduction",
+    "title": "Week 2 notes",
     "section": "Reflection",
     "text": "Reflection\nI think it is pretty nerve-racking thinking about how the data that I have/choose to use could affect the outcome of someone’s life. It makes me want to be as careful as possible to minimize bias as much as possible. This has made me very slow to answer data analysis questions in class."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "My name is Jennifer Luu, but I go by Jun (pronounced like June)! I am discovering my path of blending my lived experience and background in construction engineering with urban spatial analytics.\nI think the most effective way to tell you my story is by going through the cities I’ve lived and learned in. If you see a city you’re thinking about visiting, let me know! I would love to share recommendations or even help you plan your trip!\n\nMy Journey\nLeesburg, VA\nI grew up 1-1.5h outside of Washington D.C. It was in this politics-centered city where my flame of affordable housing ignited.\nBlacksburg, VA\nMy interest in working in affordable housing led me to Virginia Tech, where I majored in Construction Engineering and Management. GO HOKIES!\nChicago, IL\nI wanted to integrate myself into a city that with a strong history of housing reform and policy. It was here that I started to think about how my work in different construction projects were affecting the community that I was in. I began a personal research project in an attempt to quantify these effects.\nLos Angeles, CA\nDuring my time in LA, my research interests both expanded and deepened. I was able to see how housing directly affected healthcare and education.\nNew York City, NY\nI had the amazing opportunity to work on my dream project- the thing that I had worked for all through undergrad: renovation of low-income housing in East Brooklyn. I could go on about this, but I will spare you the reading. (Feel free to reach out to me if you want to talk about it!)\nPhiladelphia, PA\nIt all led to right here, The University of Pennsylvania. Though I loved working in affordable housing construction and it felt like that was what I was running towards since I was 16, I realized something else that I wanted. It is extremely important to do the work in the field, but I wanted to do research to support future projects.\nThanks for reading! I hope you’ll follow me to see where I go next! Maybe it’ll be another city, but maybe I’ll stay right here in Philly."
+  },
+  {
+    "objectID": "labs/lab-05.html",
+    "href": "labs/lab-05.html",
+    "title": "Lab 5",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 5 project."
+  },
+  {
+    "objectID": "labs/lab-01.html",
+    "href": "labs/lab-01.html",
+    "title": "Lab 1",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 1 project."
+  },
+  {
+    "objectID": "labs/lab-02.html",
+    "href": "labs/lab-02.html",
+    "title": "Lab 2",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 2 project."
+  },
+  {
+    "objectID": "labs/lab-03.html",
+    "href": "labs/lab-03.html",
+    "title": "Lab 3",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 3 project."
+  },
+  {
+    "objectID": "labs/lab-04.html",
+    "href": "labs/lab-04.html",
+    "title": "Lab 4",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 4 project."
   },
   {
     "objectID": "index.html",
@@ -161,46 +203,46 @@
     "text": "Email: jjluu@upenn.edu\nGitHub: jenniferluu6"
   },
   {
-    "objectID": "labs/lab-04.html",
-    "href": "labs/lab-04.html",
-    "title": "Lab 4",
+    "objectID": "weekly-notes/week-03-notes.html",
+    "href": "weekly-notes/week-03-notes.html",
+    "title": "Week 3 notes",
     "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 4 project."
+    "text": "Anscombe’s Quartet and the limits of summary statistics\n- Depending on the way information is visualized, it can show completely different patterns.\n- “How to lie with stats/maps”\n- Outliers may represent important communities\n- Relationships aren’t always linear\nExploratory Data Analysis is detective work\nData → Aesthetics → Geometries → Visual\n- Data: Your data set (census data, survey responses, etc.)\n- Aesthetics: What variables map to visual properties (x, y, color, size)\n- Geometries: How to display the data (points, bars, lines)\n- Additional layers: Scales, themes, facets, annotations"
   },
   {
-    "objectID": "labs/lab-03.html",
-    "href": "labs/lab-03.html",
-    "title": "Lab 3",
+    "objectID": "weekly-notes/week-03-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-03-notes.html#key-concepts-learned",
+    "title": "Week 3 notes",
     "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 3 project."
+    "text": "Anscombe’s Quartet and the limits of summary statistics\n- Depending on the way information is visualized, it can show completely different patterns.\n- “How to lie with stats/maps”\n- Outliers may represent important communities\n- Relationships aren’t always linear\nExploratory Data Analysis is detective work\nData → Aesthetics → Geometries → Visual\n- Data: Your data set (census data, survey responses, etc.)\n- Aesthetics: What variables map to visual properties (x, y, color, size)\n- Geometries: How to display the data (points, bars, lines)\n- Additional layers: Scales, themes, facets, annotations"
   },
   {
-    "objectID": "labs/lab-02.html",
-    "href": "labs/lab-02.html",
-    "title": "Lab 2",
-    "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 2 project."
+    "objectID": "weekly-notes/week-03-notes.html#coding-techniques",
+    "href": "weekly-notes/week-03-notes.html#coding-techniques",
+    "title": "Week 3 notes",
+    "section": "Coding Techniques",
+    "text": "Coding Techniques\nggplot(data = your_data) +   aes(x = variable1, y = variable2) +   geom_something() +   additional_layers()\nAesthetics map data to visual properties:\n\nx, y - position\ncolor - point/line color\nfill - area fill color\nsize - point/line size\nshape - point shape\nalpha - transparency\nleft_join() - Keep all rows from left dataset\nright_join() - Keep all rows from right dataset\ninner_join() - Keep only rows that match in both\nfull_join() - Keep all rows from both datasets\n\nImportant: Aesthetics go inside aes(), constants go outside"
   },
   {
-    "objectID": "labs/lab-01.html",
-    "href": "labs/lab-01.html",
-    "title": "Lab 1",
-    "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 1 project."
+    "objectID": "weekly-notes/week-03-notes.html#questions-challenges",
+    "href": "weekly-notes/week-03-notes.html#questions-challenges",
+    "title": "Week 3 notes",
+    "section": "Questions & Challenges",
+    "text": "Questions & Challenges\nPattern: Smaller populations have higher uncertainty\nEthical implication: These communities might be systematically under counted\n\n\nReport the corresponding MOEs of ACS estimates - Always include margin of error values\nInclude a footnote when not reporting MOEs - Explicitly acknowledge omission\n\nProvide context for (un)reliability - Use coefficient of variation (CV):\n\nCV &lt; 12% = reliable (green coding)\nCV 12-40% = somewhat reliable (yellow)\nCV &gt; 40% = unreliable (red coding)\n\nReduce statistical uncertainty - Collapse data detail, aggregate geographies, use multi-year estimates\nAlways conduct statistical significance tests when comparing ACS estimates over time"
   },
   {
-    "objectID": "labs/lab-05.html",
-    "href": "labs/lab-05.html",
-    "title": "Lab 5",
-    "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 5 project."
+    "objectID": "weekly-notes/week-03-notes.html#connections-to-policy",
+    "href": "weekly-notes/week-03-notes.html#connections-to-policy",
+    "title": "Week 3 notes",
+    "section": "Connections to Policy",
+    "text": "Connections to Policy\nResearch finding: Only 27% of planners warn users about unreliable ACS data\n- Most planners don’t report margins of error\n- Many lack training on statistical uncertainty\nCommon problems in government data presentation:\n- Misleading scales or axes\n- Cherry-picked time periods\n- Hidden or ignored uncertainty\n- Missing context about data reliability"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
-    "section": "",
-    "text": "My name is Jennifer Luu, but I go by Jun (pronounced like June)! I am discovering my path of blending my lived experience and background in construction engineering with urban spatial analytics.\nI think the most effective way to tell you my story is by going through the cities I’ve lived and learned in. If you see a city you’re thinking about visiting, let me know! I would love to share recommendations or even help you plan your trip!\n\nMy Journey\nLeesburg, VA\nI grew up 1-1.5h outside of Washington D.C. It was in this politics-centered city where my flame of affordable housing ignited.\nBlacksburg, VA\nMy interest in working in affordable housing led me to Virginia Tech, where I majored in Construction Engineering and Management. GO HOKIES!\nChicago, IL\nI wanted to integrate myself into a city that with a strong history of housing reform and policy. It was here that I started to think about how my work in different construction projects were affecting the community that I was in. I began a personal research project in an attempt to quantify these effects.\nLos Angeles, CA\nDuring my time in LA, my research interests both expanded and deepened. I was able to see how housing directly affected healthcare and education.\nNew York City, NY\nI had the amazing opportunity to work on my dream project- the thing that I had worked for all through undergrad: renovation of low-income housing in East Brooklyn. I could go on about this, but I will spare you the reading. (Feel free to reach out to me if you want to talk about it!)\nPhiladelphia, PA\nIt all led to right here, The University of Pennsylvania. Though I loved working in affordable housing construction and it felt like that was what I was running towards since I was 16, I realized something else that I wanted. It is extremely important to do the work in the field, but I wanted to do research to support future projects.\nThanks for reading! I hope you’ll follow me to see where I go next! Maybe it’ll be another city, but maybe I’ll stay right here in Philly."
+    "objectID": "weekly-notes/week-03-notes.html#reflection",
+    "href": "weekly-notes/week-03-notes.html#reflection",
+    "title": "Week 3 notes",
+    "section": "Reflection",
+    "text": "Reflection\nReminder to study through definitions more closely."
   },
   {
     "objectID": "weekly-notes/week-01-notes.html",
