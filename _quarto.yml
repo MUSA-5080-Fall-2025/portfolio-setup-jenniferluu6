@@ -18,17 +18,17 @@ website:
             text: "Week 2"
           - href: weekly-notes/week-03-notes.qmd
             text: "Week 3"            
-      - text: "Labs"
+      - text: "Assignments"
         menu: 
-          - href: labs/lab-01.qmd
+          - href: assignments/assignment_1.qmd
             text: "Lab 1"
-          - href: labs/lab-02.qmd
+          - href: assignments/lab-02.qmd
             text: "Lab 2"         
-          - href: labs/lab-03.qmd
+          - href: assignments/lab-03.qmd
             text: "Lab 3"
-          - href: labs/lab-04.qmd
+          - href: assignments/lab-04.qmd
             text: "Lab 4"
-          - href: labs/lab-05.qmd
+          - href: assignments/lab-05.qmd
             text: "Lab 5"
             
 format:
