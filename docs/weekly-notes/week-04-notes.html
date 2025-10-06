@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-09-29">
 
-<title>Lab 2 – Jun Luu - MUSA 5080 Portfolio</title>
+<title>Week 4 notes – Jun Luu - MUSA 5080 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -160,15 +161,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#key-concepts-learned" id="toc-key-concepts-learned" class="nav-link active" data-scroll-target="#key-concepts-learned">Key Concepts Learned</a></li>
+  <li><a href="#questions-challenges" id="toc-questions-challenges" class="nav-link" data-scroll-target="#questions-challenges">Questions &amp; Challenges</a></li>
+  <li><a href="#connections-to-policy" id="toc-connections-to-policy" class="nav-link" data-scroll-target="#connections-to-policy">Connections to Policy</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 2</h1>
+<h1 class="title">Week 4 notes</h1>
 </div>
 
 
@@ -176,6 +186,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 29, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -185,10 +201,204 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<hr>
-<p>You’re early! Come back to see when I upload my Lab 2 project.</p>
+<section id="key-concepts-learned" class="level2">
+<h2 class="anchored" data-anchor-id="key-concepts-learned">Key Concepts Learned</h2>
+<p><strong>Geographic bias in algorithms:</strong></p>
+<ul>
+<li>Training data may under-represent certain areas</li>
+<li>Spatial autocorrelation violates independence assumptions</li>
+<li>Service delivery algorithms may reinforce geographic inequities</li>
+</ul>
+<section id="vector-data-model" class="level4">
+<h4 class="anchored" data-anchor-id="vector-data-model">Vector Data Model</h4>
+</section>
+<section id="real-world-simplified-geometric-representations" class="level4">
+<h4 class="anchored" data-anchor-id="real-world-simplified-geometric-representations"><strong>Real world → Simplified geometric representations</strong></h4>
+<p><strong>Three basic types:</strong></p>
+<ul>
+<li><strong>Points</strong> → Locations (schools, hospitals, crime incidents)</li>
+<li><strong>Lines</strong> → Linear features (roads, rivers, transit routes)<br>
+</li>
+<li><strong>Polygons</strong> → Areas (census tracts, neighborhoods, service areas)</li>
+</ul>
+<p><strong>Each feature has:</strong></p>
+<ul>
+<li><strong>Geometry</strong> → Shape and location</li>
+<li><strong>Attributes</strong> → Data about that feature (population, income, etc.)</li>
+</ul>
+<p><strong>Key principle:</strong> Spatial data is just data.frame + geometry column</p>
+<p><strong>Common spatial data formats:</strong></p>
+<ul>
+<li><strong>Shapefiles</strong> (.shp + supporting files)</li>
+<li><strong>GeoJSON</strong> (.geojson)</li>
+<li><strong>KML/KMZ</strong> (Google Earth)</li>
+<li><strong>Database connections</strong> (PostGIS)</li>
+</ul>
+</section>
+<section id="why-projections-matter" class="level4">
+<h4 class="anchored" data-anchor-id="why-projections-matter">Why Projections Matter</h4>
+<p><strong>The Earth is round, maps are flat</strong></p>
+<p><strong>Problems:</strong></p>
+<ul>
+<li>Can’t preserve area, distance, and angles simultaneously</li>
+<li>Different projections optimize different properties</li>
+<li>Wrong projection → wrong analysis results!</li>
+</ul>
+<p><strong>Example:</strong> Measuring areas in latitude/longitude gives wrong answers</p>
+</section>
+<section id="geographic-vs.-projected-coordinates" class="level4">
+<h4 class="anchored" data-anchor-id="geographic-vs.-projected-coordinates">Geographic vs.&nbsp;Projected Coordinates</h4>
+<p><strong>Geographic Coordinate Systems (GCS):</strong></p>
+<ul>
+<li>Latitude/longitude coordinates</li>
+<li>Units: decimal degrees</li>
+<li>Good for: Global datasets, web mapping</li>
+<li>Bad for: Area/distance calculations</li>
+</ul>
+<p><strong>Projected Coordinate Systems (PCS):</strong></p>
+<ul>
+<li>X/Y coordinates on a flat plane</li>
+<li>Units: meters, feet, etc.</li>
+<li>Good for: Local analysis, accurate measurements</li>
+<li>Bad for: Large areas, global datasets</li>
+</ul>
+</section>
+<section id="common-coordinate-reference-systems" class="level4">
+<h4 class="anchored" data-anchor-id="common-coordinate-reference-systems">Common Coordinate Reference Systems</h4>
+<p><strong>WGS84 (EPSG:4326)</strong></p>
+<ul>
+<li>GPS standard, global coverage</li>
+<li>Geographic system (lat/lon)</li>
+<li>Good for web mapping, data sharing</li>
+</ul>
+<p><strong>Web Mercator (EPSG:3857)</strong></p>
+<ul>
+<li>Web mapping standard</li>
+<li>Projected system</li>
+<li>Heavily distorts areas near poles</li>
+</ul>
+<p><strong>State Plane / UTM zones</strong></p>
+<ul>
+<li>Local accuracy</li>
+<li>Different zones for different regions</li>
+<li>Optimized for specific geographic areas</li>
+</ul>
+<p><strong>Albers Equal Area</strong></p>
+<ul>
+<li>Preserves area</li>
+<li>Good for demographic/statistical analysis</li>
+</ul>
+</section>
+<section id="coding-techniques" class="level4">
+<h4 class="anchored" data-anchor-id="coding-techniques">Coding Techniques</h4>
+<p>The <code>.predicate</code> tells <code>st_filter()</code> what spatial relationship to look for:</p>
+<p><code>r predicate-structure # Basic structure: st_filter(data_to_filter, reference_geometry, .predicate = relationship)</code></p>
+<p>Different questions need different relationships:</p>
+<ul>
+<li>“Which counties border Allegheny?” → <code>st_touches</code></li>
+<li>“Which tracts are IN Allegheny?” → <code>st_within</code><br>
+</li>
+<li>“Which tracts overlap a metro area?” → <code>st_intersects</code></li>
+</ul>
+<p><strong>Default:</strong> If no <code>.predicate</code> specified, uses <code>st_intersects</code></p>
+</section>
+<section id="spatial-relationships-when-to-use-each" class="level4">
+<h4 class="anchored" data-anchor-id="spatial-relationships-when-to-use-each">Spatial Relationships: When to Use Each</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 30%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Predicate</th>
+<th>Definition</th>
+<th>Policy Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>st_intersects()</code></td>
+<td>Any overlap at all</td>
+<td>“Counties affected by flooding”</td>
+</tr>
+<tr class="even">
+<td><code>st_touches()</code></td>
+<td>Share boundary, no interior overlap</td>
+<td>“Neighboring counties”</td>
+</tr>
+<tr class="odd">
+<td><code>st_within()</code></td>
+<td>Completely inside</td>
+<td>“Schools within district boundaries”</td>
+</tr>
+<tr class="even">
+<td><code>st_contains()</code></td>
+<td>Completely contains</td>
+<td>“Districts containing hospitals”</td>
+</tr>
+<tr class="odd">
+<td><code>st_overlaps()</code></td>
+<td>Partial overlap</td>
+<td>“Overlapping service areas”</td>
+</tr>
+<tr class="even">
+<td><code>st_disjoint()</code></td>
+<td>No spatial relationship</td>
+<td>“Counties separate from urban areas”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Most common:</strong> <code>st_intersects()</code> (any overlap) and <code>st_touches()</code> (neighbors)</p>
+<p><strong>Important:</strong> Units depend on coordinate reference system!</p>
+<p>The Key Difference <code>st_filter()</code> with predicates: Selects complete features (keeps or removes entire rows)</p>
+<p><code>st_intersection()</code> and <code>st_union()</code>: Modifies geometries (creates new shapes)</p>
+</section>
+</section>
+<section id="questions-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="questions-challenges">Questions &amp; Challenges</h2>
+<section id="a-note-about-that-." class="level4">
+<h4 class="anchored" data-anchor-id="a-note-about-that-.">A note about that (.)</h4>
+<p>The dot (.) is a placeholder that represents the data being passed through the pipe (%&gt;%).</p>
+<p>pa_counties &lt;- pa_counties %&gt;% mutate( area_sqkm = as.numeric(st_area(.)) / 1000000 )</p>
+<p>The . refers to <code>pa_counties</code> - the data frame being passed through the pipe. So this is equivalent to:</p>
+<p>pa_counties &lt;- pa_counties %&gt;% mutate( area_sqkm = as.numeric(st_area(pa_counties)) / 1000000 )</p>
+</section>
+</section>
+<section id="connections-to-policy" class="level2">
+<h2 class="anchored" data-anchor-id="connections-to-policy">Connections to Policy</h2>
+<p><strong>Typical spatial analysis steps:</strong></p>
+<ol type="1">
+<li><strong>Load data</strong> → Get spatial boundaries and attribute data</li>
+<li><strong>Check projections</strong> → Transform to appropriate CRS</li>
+<li><strong>Join datasets</strong> → Combine spatial and non-spatial data</li>
+<li><strong>Spatial operations</strong> → Buffers, intersections, distance calculations</li>
+<li><strong>Aggregation</strong> → Summarize across spatial units</li>
+<li><strong>Visualization</strong> → Maps and charts</li>
+<li><strong>Interpretation</strong> → Policy recommendations</li>
+</ol>
+<p>Use <code>st_filter()</code> when:</p>
+<ul>
+<li>“Which census tracts touch hospital service areas?”</li>
+<li>You want to select/identify features based on location</li>
+<li>You need complete features with their original boundaries</li>
+<li>You’re counting: “How many tracts are near hospitals?”</li>
+</ul>
+<p>Use <code>st_intersection()</code> when:</p>
+<ul>
+<li>“What is the area of overlap between tracts and service zones?”</li>
+<li>You need to calculate areas, populations, or other measures within specific boundaries</li>
+<li>You’re doing spatial overlay analysis</li>
+<li>You need to clip data to a study area</li>
+</ul>
+</section>
+<section id="reflection" class="level2">
+<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
+<p>Major takeaway is the focus in coordinate systems.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

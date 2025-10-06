@@ -84,53 +84,144 @@
     "text": "Before submitting, make sure you’ve: - [ ] Customized _quarto.yml with your name - [ ] Updated index.qmd with your information - [ ] Completed Week 1 notes - [ ] Enabled GitHub Pages - [ ] Verified your website loads correctly - [ ] Submitted your URL to Canvas\n\nNeed help? Don’t struggle alone - reach out during office hours (mine + TAs) or in class!"
   },
   {
-    "objectID": "weekly-notes/week-02-notes.html",
-    "href": "weekly-notes/week-02-notes.html",
-    "title": "Week 2 notes",
+    "objectID": "weekly-notes/week-04-notes.html",
+    "href": "weekly-notes/week-04-notes.html",
+    "title": "Week 4 notes",
     "section": "",
-    "text": "What is an algorithm?\nA set of rules or instructions for solving a problem or completing a task\n\nInputs (“features”, “predictors”, “independent variables”, “x”)\nOutputs (“labels”, “outcome”, “dependent variable”, “y”)\n\nData Science - Computer science/engineering focus on algorithms and methods\nData Analytics - Application of data science methods to other disciplines\nMachine Learning - Algorithms for classification & prediction that learn from data\nAI - Algorithms that adjust and improve across iterations (neural networks, etc.)\nTIGER/Line Files\n\nGeographic boundaries (shapefiles)\nCensus tracts, counties, states\nNow released as shapefiles (easier to use!)\n\nHistorical Data Sources:\n\nNHGIS (nhgis.org) - Historical census data\nNeighborhood Change Database\nLongitudinal Tract Database - Track changes over time"
+    "text": "Geographic bias in algorithms:\n\nTraining data may under-represent certain areas\nSpatial autocorrelation violates independence assumptions\nService delivery algorithms may reinforce geographic inequities\n\n\n\n\n\n\nThree basic types:\n\nPoints → Locations (schools, hospitals, crime incidents)\nLines → Linear features (roads, rivers, transit routes)\n\nPolygons → Areas (census tracts, neighborhoods, service areas)\n\nEach feature has:\n\nGeometry → Shape and location\nAttributes → Data about that feature (population, income, etc.)\n\nKey principle: Spatial data is just data.frame + geometry column\nCommon spatial data formats:\n\nShapefiles (.shp + supporting files)\nGeoJSON (.geojson)\nKML/KMZ (Google Earth)\nDatabase connections (PostGIS)\n\n\n\n\nThe Earth is round, maps are flat\nProblems:\n\nCan’t preserve area, distance, and angles simultaneously\nDifferent projections optimize different properties\nWrong projection → wrong analysis results!\n\nExample: Measuring areas in latitude/longitude gives wrong answers\n\n\n\nGeographic Coordinate Systems (GCS):\n\nLatitude/longitude coordinates\nUnits: decimal degrees\nGood for: Global datasets, web mapping\nBad for: Area/distance calculations\n\nProjected Coordinate Systems (PCS):\n\nX/Y coordinates on a flat plane\nUnits: meters, feet, etc.\nGood for: Local analysis, accurate measurements\nBad for: Large areas, global datasets\n\n\n\n\nWGS84 (EPSG:4326)\n\nGPS standard, global coverage\nGeographic system (lat/lon)\nGood for web mapping, data sharing\n\nWeb Mercator (EPSG:3857)\n\nWeb mapping standard\nProjected system\nHeavily distorts areas near poles\n\nState Plane / UTM zones\n\nLocal accuracy\nDifferent zones for different regions\nOptimized for specific geographic areas\n\nAlbers Equal Area\n\nPreserves area\nGood for demographic/statistical analysis\n\n\n\n\nThe .predicate tells st_filter() what spatial relationship to look for:\nr predicate-structure # Basic structure: st_filter(data_to_filter, reference_geometry, .predicate = relationship)\nDifferent questions need different relationships:\n\n“Which counties border Allegheny?” → st_touches\n“Which tracts are IN Allegheny?” → st_within\n\n“Which tracts overlap a metro area?” → st_intersects\n\nDefault: If no .predicate specified, uses st_intersects\n\n\n\n\n\n\n\n\n\n\n\nPredicate\nDefinition\nPolicy Use Case\n\n\n\n\nst_intersects()\nAny overlap at all\n“Counties affected by flooding”\n\n\nst_touches()\nShare boundary, no interior overlap\n“Neighboring counties”\n\n\nst_within()\nCompletely inside\n“Schools within district boundaries”\n\n\nst_contains()\nCompletely contains\n“Districts containing hospitals”\n\n\nst_overlaps()\nPartial overlap\n“Overlapping service areas”\n\n\nst_disjoint()\nNo spatial relationship\n“Counties separate from urban areas”\n\n\n\nMost common: st_intersects() (any overlap) and st_touches() (neighbors)\nImportant: Units depend on coordinate reference system!\nThe Key Difference st_filter() with predicates: Selects complete features (keeps or removes entire rows)\nst_intersection() and st_union(): Modifies geometries (creates new shapes)"
   },
   {
-    "objectID": "weekly-notes/week-02-notes.html#key-concepts-learned",
-    "href": "weekly-notes/week-02-notes.html#key-concepts-learned",
-    "title": "Week 2 notes",
+    "objectID": "weekly-notes/week-04-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-04-notes.html#key-concepts-learned",
+    "title": "Week 4 notes",
     "section": "",
-    "text": "What is an algorithm?\nA set of rules or instructions for solving a problem or completing a task\n\nInputs (“features”, “predictors”, “independent variables”, “x”)\nOutputs (“labels”, “outcome”, “dependent variable”, “y”)\n\nData Science - Computer science/engineering focus on algorithms and methods\nData Analytics - Application of data science methods to other disciplines\nMachine Learning - Algorithms for classification & prediction that learn from data\nAI - Algorithms that adjust and improve across iterations (neural networks, etc.)\nTIGER/Line Files\n\nGeographic boundaries (shapefiles)\nCensus tracts, counties, states\nNow released as shapefiles (easier to use!)\n\nHistorical Data Sources:\n\nNHGIS (nhgis.org) - Historical census data\nNeighborhood Change Database\nLongitudinal Tract Database - Track changes over time"
+    "text": "Geographic bias in algorithms:\n\nTraining data may under-represent certain areas\nSpatial autocorrelation violates independence assumptions\nService delivery algorithms may reinforce geographic inequities\n\n\n\n\n\n\nThree basic types:\n\nPoints → Locations (schools, hospitals, crime incidents)\nLines → Linear features (roads, rivers, transit routes)\n\nPolygons → Areas (census tracts, neighborhoods, service areas)\n\nEach feature has:\n\nGeometry → Shape and location\nAttributes → Data about that feature (population, income, etc.)\n\nKey principle: Spatial data is just data.frame + geometry column\nCommon spatial data formats:\n\nShapefiles (.shp + supporting files)\nGeoJSON (.geojson)\nKML/KMZ (Google Earth)\nDatabase connections (PostGIS)\n\n\n\n\nThe Earth is round, maps are flat\nProblems:\n\nCan’t preserve area, distance, and angles simultaneously\nDifferent projections optimize different properties\nWrong projection → wrong analysis results!\n\nExample: Measuring areas in latitude/longitude gives wrong answers\n\n\n\nGeographic Coordinate Systems (GCS):\n\nLatitude/longitude coordinates\nUnits: decimal degrees\nGood for: Global datasets, web mapping\nBad for: Area/distance calculations\n\nProjected Coordinate Systems (PCS):\n\nX/Y coordinates on a flat plane\nUnits: meters, feet, etc.\nGood for: Local analysis, accurate measurements\nBad for: Large areas, global datasets\n\n\n\n\nWGS84 (EPSG:4326)\n\nGPS standard, global coverage\nGeographic system (lat/lon)\nGood for web mapping, data sharing\n\nWeb Mercator (EPSG:3857)\n\nWeb mapping standard\nProjected system\nHeavily distorts areas near poles\n\nState Plane / UTM zones\n\nLocal accuracy\nDifferent zones for different regions\nOptimized for specific geographic areas\n\nAlbers Equal Area\n\nPreserves area\nGood for demographic/statistical analysis\n\n\n\n\nThe .predicate tells st_filter() what spatial relationship to look for:\nr predicate-structure # Basic structure: st_filter(data_to_filter, reference_geometry, .predicate = relationship)\nDifferent questions need different relationships:\n\n“Which counties border Allegheny?” → st_touches\n“Which tracts are IN Allegheny?” → st_within\n\n“Which tracts overlap a metro area?” → st_intersects\n\nDefault: If no .predicate specified, uses st_intersects\n\n\n\n\n\n\n\n\n\n\n\nPredicate\nDefinition\nPolicy Use Case\n\n\n\n\nst_intersects()\nAny overlap at all\n“Counties affected by flooding”\n\n\nst_touches()\nShare boundary, no interior overlap\n“Neighboring counties”\n\n\nst_within()\nCompletely inside\n“Schools within district boundaries”\n\n\nst_contains()\nCompletely contains\n“Districts containing hospitals”\n\n\nst_overlaps()\nPartial overlap\n“Overlapping service areas”\n\n\nst_disjoint()\nNo spatial relationship\n“Counties separate from urban areas”\n\n\n\nMost common: st_intersects() (any overlap) and st_touches() (neighbors)\nImportant: Units depend on coordinate reference system!\nThe Key Difference st_filter() with predicates: Selects complete features (keeps or removes entire rows)\nst_intersection() and st_union(): Modifies geometries (creates new shapes)"
   },
   {
-    "objectID": "weekly-notes/week-02-notes.html#coding-techniques",
-    "href": "weekly-notes/week-02-notes.html#coding-techniques",
-    "title": "Week 2 notes",
-    "section": "Coding Techniques",
-    "text": "Coding Techniques\nlibrary(tidycensus)\nlibrary(tidyverse)\nlibrary(knitr)\n\ncase_when()\nget_acs()\nmutate()\nselect()\nstr_remove(), str_extract(), str_replace()\nkable()"
-  },
-  {
-    "objectID": "weekly-notes/week-02-notes.html#questions-challenges",
-    "href": "weekly-notes/week-02-notes.html#questions-challenges",
-    "title": "Week 2 notes",
+    "objectID": "weekly-notes/week-04-notes.html#questions-challenges",
+    "href": "weekly-notes/week-04-notes.html#questions-challenges",
+    "title": "Week 4 notes",
     "section": "Questions & Challenges",
-    "text": "Questions & Challenges\nI need to finish Lab 0, so that I can practice the different coding functions."
+    "text": "Questions & Challenges\n\nA note about that (.)\nThe dot (.) is a placeholder that represents the data being passed through the pipe (%&gt;%).\npa_counties &lt;- pa_counties %&gt;% mutate( area_sqkm = as.numeric(st_area(.)) / 1000000 )\nThe . refers to pa_counties - the data frame being passed through the pipe. So this is equivalent to:\npa_counties &lt;- pa_counties %&gt;% mutate( area_sqkm = as.numeric(st_area(pa_counties)) / 1000000 )"
   },
   {
-    "objectID": "weekly-notes/week-02-notes.html#connections-to-policy",
-    "href": "weekly-notes/week-02-notes.html#connections-to-policy",
-    "title": "Week 2 notes",
+    "objectID": "weekly-notes/week-04-notes.html#connections-to-policy",
+    "href": "weekly-notes/week-04-notes.html#connections-to-policy",
+    "title": "Week 4 notes",
     "section": "Connections to Policy",
-    "text": "Connections to Policy\n\nProxy: What would you use to stand in for what you want?\nBlind spot: What data gap or historical bias could skew results?\nHarm + Guardrail: Who could be harmed, and one simple safeguard?\n\n\nCriminal Justice - Recidivism risk scores for bail and sentencing decisions\nHousing & Finance - Mortgage lending and tenant screening algorithms\nHealthcare - Patient care prioritization and resource allocation\n\nLong history of government data collection:\n\nCivic registration systems\nCensus data\nAdministrative records\nOperations research (post-WWII)\n\nCensus data is the foundation for:\n\nUnderstanding community demographics\nAllocating government resources\n\nTracking neighborhood change"
+    "text": "Connections to Policy\nTypical spatial analysis steps:\n\nLoad data → Get spatial boundaries and attribute data\nCheck projections → Transform to appropriate CRS\nJoin datasets → Combine spatial and non-spatial data\nSpatial operations → Buffers, intersections, distance calculations\nAggregation → Summarize across spatial units\nVisualization → Maps and charts\nInterpretation → Policy recommendations\n\nUse st_filter() when:\n\n“Which census tracts touch hospital service areas?”\nYou want to select/identify features based on location\nYou need complete features with their original boundaries\nYou’re counting: “How many tracts are near hospitals?”\n\nUse st_intersection() when:\n\n“What is the area of overlap between tracts and service zones?”\nYou need to calculate areas, populations, or other measures within specific boundaries\nYou’re doing spatial overlay analysis\nYou need to clip data to a study area"
   },
   {
-    "objectID": "weekly-notes/week-02-notes.html#reflection",
-    "href": "weekly-notes/week-02-notes.html#reflection",
-    "title": "Week 2 notes",
+    "objectID": "weekly-notes/week-04-notes.html#reflection",
+    "href": "weekly-notes/week-04-notes.html#reflection",
+    "title": "Week 4 notes",
     "section": "Reflection",
-    "text": "Reflection\nI think it is pretty nerve-racking thinking about how the data that I have/choose to use could affect the outcome of someone’s life. It makes me want to be as careful as possible to minimize bias as much as possible. This has made me very slow to answer data analysis questions in class."
+    "text": "Reflection\nMajor takeaway is the focus in coordinate systems."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "weekly-notes/week-03-notes.html",
+    "href": "weekly-notes/week-03-notes.html",
+    "title": "Week 3 notes",
     "section": "",
-    "text": "My name is Jennifer Luu, but I go by Jun (pronounced like June)! I am discovering my path of blending my lived experience and background in construction engineering with urban spatial analytics.\nI think the most effective way to tell you my story is by going through the cities I’ve lived and learned in. If you see a city you’re thinking about visiting, let me know! I would love to share recommendations or even help you plan your trip!\n\nMy Journey\nLeesburg, VA\nI grew up 1-1.5h outside of Washington D.C. It was in this politics-centered city where my flame of affordable housing ignited.\nBlacksburg, VA\nMy interest in working in affordable housing led me to Virginia Tech, where I majored in Construction Engineering and Management. GO HOKIES!\nChicago, IL\nI wanted to integrate myself into a city that with a strong history of housing reform and policy. It was here that I started to think about how my work in different construction projects were affecting the community that I was in. I began a personal research project in an attempt to quantify these effects.\nLos Angeles, CA\nDuring my time in LA, my research interests both expanded and deepened. I was able to see how housing directly affected healthcare and education.\nNew York City, NY\nI had the amazing opportunity to work on my dream project- the thing that I had worked for all through undergrad: renovation of low-income housing in East Brooklyn. I could go on about this, but I will spare you the reading. (Feel free to reach out to me if you want to talk about it!)\nPhiladelphia, PA\nIt all led to right here, The University of Pennsylvania. Though I loved working in affordable housing construction and it felt like that was what I was running towards since I was 16, I realized something else that I wanted. It is extremely important to do the work in the field, but I wanted to do research to support future projects.\nThanks for reading! I hope you’ll follow me to see where I go next! Maybe it’ll be another city, but maybe I’ll stay right here in Philly."
+    "text": "Anscombe’s Quartet and the limits of summary statistics\n- Depending on the way information is visualized, it can show completely different patterns.\n- “How to lie with stats/maps”\n- Outliers may represent important communities\n- Relationships aren’t always linear\nExploratory Data Analysis is detective work\nData → Aesthetics → Geometries → Visual\n- Data: Your data set (census data, survey responses, etc.)\n- Aesthetics: What variables map to visual properties (x, y, color, size)\n- Geometries: How to display the data (points, bars, lines)\n- Additional layers: Scales, themes, facets, annotations"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-03-notes.html#key-concepts-learned",
+    "title": "Week 3 notes",
+    "section": "",
+    "text": "Anscombe’s Quartet and the limits of summary statistics\n- Depending on the way information is visualized, it can show completely different patterns.\n- “How to lie with stats/maps”\n- Outliers may represent important communities\n- Relationships aren’t always linear\nExploratory Data Analysis is detective work\nData → Aesthetics → Geometries → Visual\n- Data: Your data set (census data, survey responses, etc.)\n- Aesthetics: What variables map to visual properties (x, y, color, size)\n- Geometries: How to display the data (points, bars, lines)\n- Additional layers: Scales, themes, facets, annotations"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#coding-techniques",
+    "href": "weekly-notes/week-03-notes.html#coding-techniques",
+    "title": "Week 3 notes",
+    "section": "Coding Techniques",
+    "text": "Coding Techniques\nggplot(data = your_data) +   aes(x = variable1, y = variable2) +   geom_something() +   additional_layers()\nAesthetics map data to visual properties:\n\nx, y - position\ncolor - point/line color\nfill - area fill color\nsize - point/line size\nshape - point shape\nalpha - transparency\nleft_join() - Keep all rows from left dataset\nright_join() - Keep all rows from right dataset\ninner_join() - Keep only rows that match in both\nfull_join() - Keep all rows from both datasets\n\nImportant: Aesthetics go inside aes(), constants go outside"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#questions-challenges",
+    "href": "weekly-notes/week-03-notes.html#questions-challenges",
+    "title": "Week 3 notes",
+    "section": "Questions & Challenges",
+    "text": "Questions & Challenges\nPattern: Smaller populations have higher uncertainty\nEthical implication: These communities might be systematically under counted\n\n\nReport the corresponding MOEs of ACS estimates - Always include margin of error values\nInclude a footnote when not reporting MOEs - Explicitly acknowledge omission\n\nProvide context for (un)reliability - Use coefficient of variation (CV):\n\nCV &lt; 12% = reliable (green coding)\nCV 12-40% = somewhat reliable (yellow)\nCV &gt; 40% = unreliable (red coding)\n\nReduce statistical uncertainty - Collapse data detail, aggregate geographies, use multi-year estimates\nAlways conduct statistical significance tests when comparing ACS estimates over time"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#connections-to-policy",
+    "href": "weekly-notes/week-03-notes.html#connections-to-policy",
+    "title": "Week 3 notes",
+    "section": "Connections to Policy",
+    "text": "Connections to Policy\nResearch finding: Only 27% of planners warn users about unreliable ACS data\n- Most planners don’t report margins of error\n- Many lack training on statistical uncertainty\nCommon problems in government data presentation:\n- Misleading scales or axes\n- Cherry-picked time periods\n- Hidden or ignored uncertainty\n- Missing context about data reliability"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#reflection",
+    "href": "weekly-notes/week-03-notes.html#reflection",
+    "title": "Week 3 notes",
+    "section": "Reflection",
+    "text": "Reflection\nReminder to study through definitions more closely."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Welcome to my MUSA 5080 Portfolio! Please follow me on my journey through Public Policy Analytics (MUSA 5080). Hopefully I will be able to analyze spatial data and create meaningful visualizations at the end of this course :O\n\n\nAdvanced spatial analysis and data science for urban planning and public policy.\n\n\n\n\nWeekly Notes: My learning reflections and key concepts\nAssignments: Completed assignments and analyses\nFinal Project: Capstone modeling challenge\n\n\n\n\nHi, my name is Jun and I recently started my Masters of Urban Spatial Analytics at The University of Pennsylvania! My background is in affordable housing and community development construction engineering. Though I loved my work, I decided that I wanted to do research that would push new projects that I believe in instead of building the projects that had already been determined.\nTo learn more about my background, please refer to the “About” section located in the banner across the top of this page!\n\n\n\n\nEmail: jjluu@upenn.edu\nGitHub: jenniferluu6"
+  },
+  {
+    "objectID": "index.html#about-this-course",
+    "href": "index.html#about-this-course",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Advanced spatial analysis and data science for urban planning and public policy."
+  },
+  {
+    "objectID": "index.html#portfolio-structure",
+    "href": "index.html#portfolio-structure",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Weekly Notes: My learning reflections and key concepts\nAssignments: Completed assignments and analyses\nFinal Project: Capstone modeling challenge"
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Hi, my name is Jun and I recently started my Masters of Urban Spatial Analytics at The University of Pennsylvania! My background is in affordable housing and community development construction engineering. Though I loved my work, I decided that I wanted to do research that would push new projects that I believe in instead of building the projects that had already been determined.\nTo learn more about my background, please refer to the “About” section located in the banner across the top of this page!"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Email: jjluu@upenn.edu\nGitHub: jenniferluu6"
+  },
+  {
+    "objectID": "assignments/lab-05.html",
+    "href": "assignments/lab-05.html",
+    "title": "Lab 5",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 5 project."
+  },
+  {
+    "objectID": "assignments/lab-03.html",
+    "href": "assignments/lab-03.html",
+    "title": "Lab 3",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 3 project."
+  },
+  {
+    "objectID": "assignments/lab-02.html",
+    "href": "assignments/lab-02.html",
+    "title": "Lab 2",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 2 project."
+  },
+  {
+    "objectID": "assignments/lab-04.html",
+    "href": "assignments/lab-04.html",
+    "title": "Lab 4",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 4 project."
   },
   {
     "objectID": "assignments/assignment_1.html",
@@ -245,109 +336,53 @@
     "text": "Submission Checklist\nBefore submitting your portfolio link on Canvas:\n\nAll code chunks run without errors\nAll “[Fill this in]” prompts have been completed\nTables are properly formatted and readable\nExecutive summary addresses all four required components\nPortfolio navigation includes this assignment\nCensus API key is properly set\nDocument renders correctly to HTML\n\nRemember: Submit your portfolio URL on Canvas, not the file itself. Your assignment should be accessible at your-portfolio-url/assignments/assignment_1/your_file_name.html"
   },
   {
-    "objectID": "assignments/lab-04.html",
-    "href": "assignments/lab-04.html",
-    "title": "Lab 4",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
     "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 4 project."
+    "text": "My name is Jennifer Luu, but I go by Jun (pronounced like June)! I am discovering my path of blending my lived experience and background in construction engineering with urban spatial analytics.\nI think the most effective way to tell you my story is by going through the cities I’ve lived and learned in. If you see a city you’re thinking about visiting, let me know! I would love to share recommendations or even help you plan your trip!\n\nMy Journey\nLeesburg, VA\nI grew up 1-1.5h outside of Washington D.C. It was in this politics-centered city where my flame of affordable housing ignited.\nBlacksburg, VA\nMy interest in working in affordable housing led me to Virginia Tech, where I majored in Construction Engineering and Management. GO HOKIES!\nChicago, IL\nI wanted to integrate myself into a city that with a strong history of housing reform and policy. It was here that I started to think about how my work in different construction projects were affecting the community that I was in. I began a personal research project in an attempt to quantify these effects.\nLos Angeles, CA\nDuring my time in LA, my research interests both expanded and deepened. I was able to see how housing directly affected healthcare and education.\nNew York City, NY\nI had the amazing opportunity to work on my dream project- the thing that I had worked for all through undergrad: renovation of low-income housing in East Brooklyn. I could go on about this, but I will spare you the reading. (Feel free to reach out to me if you want to talk about it!)\nPhiladelphia, PA\nIt all led to right here, The University of Pennsylvania. Though I loved working in affordable housing construction and it felt like that was what I was running towards since I was 16, I realized something else that I wanted. It is extremely important to do the work in the field, but I wanted to do research to support future projects.\nThanks for reading! I hope you’ll follow me to see where I go next! Maybe it’ll be another city, but maybe I’ll stay right here in Philly."
   },
   {
-    "objectID": "assignments/lab-02.html",
-    "href": "assignments/lab-02.html",
-    "title": "Lab 2",
+    "objectID": "weekly-notes/week-02-notes.html",
+    "href": "weekly-notes/week-02-notes.html",
+    "title": "Week 2 notes",
     "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 2 project."
+    "text": "What is an algorithm?\nA set of rules or instructions for solving a problem or completing a task\n\nInputs (“features”, “predictors”, “independent variables”, “x”)\nOutputs (“labels”, “outcome”, “dependent variable”, “y”)\n\nData Science - Computer science/engineering focus on algorithms and methods\nData Analytics - Application of data science methods to other disciplines\nMachine Learning - Algorithms for classification & prediction that learn from data\nAI - Algorithms that adjust and improve across iterations (neural networks, etc.)\nTIGER/Line Files\n\nGeographic boundaries (shapefiles)\nCensus tracts, counties, states\nNow released as shapefiles (easier to use!)\n\nHistorical Data Sources:\n\nNHGIS (nhgis.org) - Historical census data\nNeighborhood Change Database\nLongitudinal Tract Database - Track changes over time"
   },
   {
-    "objectID": "assignments/lab-03.html",
-    "href": "assignments/lab-03.html",
-    "title": "Lab 3",
+    "objectID": "weekly-notes/week-02-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-02-notes.html#key-concepts-learned",
+    "title": "Week 2 notes",
     "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 3 project."
+    "text": "What is an algorithm?\nA set of rules or instructions for solving a problem or completing a task\n\nInputs (“features”, “predictors”, “independent variables”, “x”)\nOutputs (“labels”, “outcome”, “dependent variable”, “y”)\n\nData Science - Computer science/engineering focus on algorithms and methods\nData Analytics - Application of data science methods to other disciplines\nMachine Learning - Algorithms for classification & prediction that learn from data\nAI - Algorithms that adjust and improve across iterations (neural networks, etc.)\nTIGER/Line Files\n\nGeographic boundaries (shapefiles)\nCensus tracts, counties, states\nNow released as shapefiles (easier to use!)\n\nHistorical Data Sources:\n\nNHGIS (nhgis.org) - Historical census data\nNeighborhood Change Database\nLongitudinal Tract Database - Track changes over time"
   },
   {
-    "objectID": "assignments/lab-05.html",
-    "href": "assignments/lab-05.html",
-    "title": "Lab 5",
-    "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 5 project."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Welcome to my MUSA 5080 Portfolio! Please follow me on my journey through Public Policy Analytics (MUSA 5080). Hopefully I will be able to analyze spatial data and create meaningful visualizations at the end of this course :O\n\n\nAdvanced spatial analysis and data science for urban planning and public policy.\n\n\n\n\nWeekly Notes: My learning reflections and key concepts\nAssignments: Completed assignments and analyses\nFinal Project: Capstone modeling challenge\n\n\n\n\nHi, my name is Jun and I recently started my Masters of Urban Spatial Analytics at The University of Pennsylvania! My background is in affordable housing and community development construction engineering. Though I loved my work, I decided that I wanted to do research that would push new projects that I believe in instead of building the projects that had already been determined.\nTo learn more about my background, please refer to the “About” section located in the banner across the top of this page!\n\n\n\n\nEmail: jjluu@upenn.edu\nGitHub: jenniferluu6"
-  },
-  {
-    "objectID": "index.html#about-this-course",
-    "href": "index.html#about-this-course",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Advanced spatial analysis and data science for urban planning and public policy."
-  },
-  {
-    "objectID": "index.html#portfolio-structure",
-    "href": "index.html#portfolio-structure",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Weekly Notes: My learning reflections and key concepts\nAssignments: Completed assignments and analyses\nFinal Project: Capstone modeling challenge"
-  },
-  {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Hi, my name is Jun and I recently started my Masters of Urban Spatial Analytics at The University of Pennsylvania! My background is in affordable housing and community development construction engineering. Though I loved my work, I decided that I wanted to do research that would push new projects that I believe in instead of building the projects that had already been determined.\nTo learn more about my background, please refer to the “About” section located in the banner across the top of this page!"
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Email: jjluu@upenn.edu\nGitHub: jenniferluu6"
-  },
-  {
-    "objectID": "weekly-notes/week-03-notes.html",
-    "href": "weekly-notes/week-03-notes.html",
-    "title": "Week 3 notes",
-    "section": "",
-    "text": "Anscombe’s Quartet and the limits of summary statistics\n- Depending on the way information is visualized, it can show completely different patterns.\n- “How to lie with stats/maps”\n- Outliers may represent important communities\n- Relationships aren’t always linear\nExploratory Data Analysis is detective work\nData → Aesthetics → Geometries → Visual\n- Data: Your data set (census data, survey responses, etc.)\n- Aesthetics: What variables map to visual properties (x, y, color, size)\n- Geometries: How to display the data (points, bars, lines)\n- Additional layers: Scales, themes, facets, annotations"
-  },
-  {
-    "objectID": "weekly-notes/week-03-notes.html#key-concepts-learned",
-    "href": "weekly-notes/week-03-notes.html#key-concepts-learned",
-    "title": "Week 3 notes",
-    "section": "",
-    "text": "Anscombe’s Quartet and the limits of summary statistics\n- Depending on the way information is visualized, it can show completely different patterns.\n- “How to lie with stats/maps”\n- Outliers may represent important communities\n- Relationships aren’t always linear\nExploratory Data Analysis is detective work\nData → Aesthetics → Geometries → Visual\n- Data: Your data set (census data, survey responses, etc.)\n- Aesthetics: What variables map to visual properties (x, y, color, size)\n- Geometries: How to display the data (points, bars, lines)\n- Additional layers: Scales, themes, facets, annotations"
-  },
-  {
-    "objectID": "weekly-notes/week-03-notes.html#coding-techniques",
-    "href": "weekly-notes/week-03-notes.html#coding-techniques",
-    "title": "Week 3 notes",
+    "objectID": "weekly-notes/week-02-notes.html#coding-techniques",
+    "href": "weekly-notes/week-02-notes.html#coding-techniques",
+    "title": "Week 2 notes",
     "section": "Coding Techniques",
-    "text": "Coding Techniques\nggplot(data = your_data) +   aes(x = variable1, y = variable2) +   geom_something() +   additional_layers()\nAesthetics map data to visual properties:\n\nx, y - position\ncolor - point/line color\nfill - area fill color\nsize - point/line size\nshape - point shape\nalpha - transparency\nleft_join() - Keep all rows from left dataset\nright_join() - Keep all rows from right dataset\ninner_join() - Keep only rows that match in both\nfull_join() - Keep all rows from both datasets\n\nImportant: Aesthetics go inside aes(), constants go outside"
+    "text": "Coding Techniques\nlibrary(tidycensus)\nlibrary(tidyverse)\nlibrary(knitr)\n\ncase_when()\nget_acs()\nmutate()\nselect()\nstr_remove(), str_extract(), str_replace()\nkable()"
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html#questions-challenges",
-    "href": "weekly-notes/week-03-notes.html#questions-challenges",
-    "title": "Week 3 notes",
+    "objectID": "weekly-notes/week-02-notes.html#questions-challenges",
+    "href": "weekly-notes/week-02-notes.html#questions-challenges",
+    "title": "Week 2 notes",
     "section": "Questions & Challenges",
-    "text": "Questions & Challenges\nPattern: Smaller populations have higher uncertainty\nEthical implication: These communities might be systematically under counted\n\n\nReport the corresponding MOEs of ACS estimates - Always include margin of error values\nInclude a footnote when not reporting MOEs - Explicitly acknowledge omission\n\nProvide context for (un)reliability - Use coefficient of variation (CV):\n\nCV &lt; 12% = reliable (green coding)\nCV 12-40% = somewhat reliable (yellow)\nCV &gt; 40% = unreliable (red coding)\n\nReduce statistical uncertainty - Collapse data detail, aggregate geographies, use multi-year estimates\nAlways conduct statistical significance tests when comparing ACS estimates over time"
+    "text": "Questions & Challenges\nI need to finish Lab 0, so that I can practice the different coding functions."
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html#connections-to-policy",
-    "href": "weekly-notes/week-03-notes.html#connections-to-policy",
-    "title": "Week 3 notes",
+    "objectID": "weekly-notes/week-02-notes.html#connections-to-policy",
+    "href": "weekly-notes/week-02-notes.html#connections-to-policy",
+    "title": "Week 2 notes",
     "section": "Connections to Policy",
-    "text": "Connections to Policy\nResearch finding: Only 27% of planners warn users about unreliable ACS data\n- Most planners don’t report margins of error\n- Many lack training on statistical uncertainty\nCommon problems in government data presentation:\n- Misleading scales or axes\n- Cherry-picked time periods\n- Hidden or ignored uncertainty\n- Missing context about data reliability"
+    "text": "Connections to Policy\n\nProxy: What would you use to stand in for what you want?\nBlind spot: What data gap or historical bias could skew results?\nHarm + Guardrail: Who could be harmed, and one simple safeguard?\n\n\nCriminal Justice - Recidivism risk scores for bail and sentencing decisions\nHousing & Finance - Mortgage lending and tenant screening algorithms\nHealthcare - Patient care prioritization and resource allocation\n\nLong history of government data collection:\n\nCivic registration systems\nCensus data\nAdministrative records\nOperations research (post-WWII)\n\nCensus data is the foundation for:\n\nUnderstanding community demographics\nAllocating government resources\n\nTracking neighborhood change"
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html#reflection",
-    "href": "weekly-notes/week-03-notes.html#reflection",
-    "title": "Week 3 notes",
+    "objectID": "weekly-notes/week-02-notes.html#reflection",
+    "href": "weekly-notes/week-02-notes.html#reflection",
+    "title": "Week 2 notes",
     "section": "Reflection",
-    "text": "Reflection\nReminder to study through definitions more closely."
+    "text": "Reflection\nI think it is pretty nerve-racking thinking about how the data that I have/choose to use could affect the outcome of someone’s life. It makes me want to be as careful as possible to minimize bias as much as possible. This has made me very slow to answer data analysis questions in class."
   },
   {
     "objectID": "weekly-notes/week-01-notes.html",

@@ -1,0 +1,177 @@
+---
+title: "Week 4 notes"
+date: "9/29/25"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Key Concepts Learned
+
+**Geographic bias in algorithms:**
+
+-   Training data may under-represent certain areas
+-   Spatial autocorrelation violates independence assumptions
+-   Service delivery algorithms may reinforce geographic inequities
+
+#### Vector Data Model
+
+#### **Real world → Simplified geometric representations**
+
+**Three basic types:**
+
+-   **Points** → Locations (schools, hospitals, crime incidents)
+-   **Lines** → Linear features (roads, rivers, transit routes)\
+-   **Polygons** → Areas (census tracts, neighborhoods, service areas)
+
+**Each feature has:**
+
+-   **Geometry** → Shape and location
+-   **Attributes** → Data about that feature (population, income, etc.)
+
+**Key principle:** Spatial data is just data.frame + geometry column
+
+**Common spatial data formats:**
+
+-   **Shapefiles** (.shp + supporting files)
+-   **GeoJSON** (.geojson)
+-   **KML/KMZ** (Google Earth)
+-   **Database connections** (PostGIS)
+
+#### Why Projections Matter
+
+**The Earth is round, maps are flat**
+
+**Problems:**
+
+-   Can't preserve area, distance, and angles simultaneously
+-   Different projections optimize different properties
+-   Wrong projection → wrong analysis results!
+
+**Example:** Measuring areas in latitude/longitude gives wrong answers
+
+#### Geographic vs. Projected Coordinates
+
+**Geographic Coordinate Systems (GCS):**
+
+-   Latitude/longitude coordinates
+-   Units: decimal degrees
+-   Good for: Global datasets, web mapping
+-   Bad for: Area/distance calculations
+
+**Projected Coordinate Systems (PCS):**
+
+-   X/Y coordinates on a flat plane
+-   Units: meters, feet, etc.
+-   Good for: Local analysis, accurate measurements
+-   Bad for: Large areas, global datasets
+
+#### Common Coordinate Reference Systems
+
+**WGS84 (EPSG:4326)**
+
+-   GPS standard, global coverage
+-   Geographic system (lat/lon)
+-   Good for web mapping, data sharing
+
+**Web Mercator (EPSG:3857)**
+
+-   Web mapping standard
+-   Projected system
+-   Heavily distorts areas near poles
+
+**State Plane / UTM zones**
+
+-   Local accuracy
+-   Different zones for different regions
+-   Optimized for specific geographic areas
+
+**Albers Equal Area**
+
+-   Preserves area
+-   Good for demographic/statistical analysis
+
+#### Coding Techniques
+
+The `.predicate` tells `st_filter()` what spatial relationship to look
+for:
+
+`r predicate-structure # Basic structure: st_filter(data_to_filter, reference_geometry, .predicate = relationship)`
+
+Different questions need different relationships:
+
+-   "Which counties border Allegheny?" → `st_touches`
+-   "Which tracts are IN Allegheny?" → `st_within`\
+-   "Which tracts overlap a metro area?" → `st_intersects`
+
+**Default:** If no `.predicate` specified, uses `st_intersects`
+
+#### Spatial Relationships: When to Use Each
+
+| Predicate | Definition | Policy Use Case |
+|--------------------|----------------------|------------------------------|
+| `st_intersects()` | Any overlap at all | "Counties affected by flooding" |
+| `st_touches()` | Share boundary, no interior overlap | "Neighboring counties" |
+| `st_within()` | Completely inside | "Schools within district boundaries" |
+| `st_contains()` | Completely contains | "Districts containing hospitals" |
+| `st_overlaps()` | Partial overlap | "Overlapping service areas" |
+| `st_disjoint()` | No spatial relationship | "Counties separate from urban areas" |
+
+**Most common:** `st_intersects()` (any overlap) and `st_touches()`
+(neighbors)
+
+**Important:** Units depend on coordinate reference system!
+
+The Key Difference `st_filter()` with predicates: Selects complete
+features (keeps or removes entire rows)
+
+`st_intersection()` and `st_union()`: Modifies geometries (creates new
+shapes)
+
+## Questions & Challenges
+
+#### A note about that (.)
+
+The dot (.) is a placeholder that represents the data being passed
+through the pipe (%\>%).
+
+pa_counties \<- pa_counties %\>% mutate( area_sqkm =
+as.numeric(st_area(.)) / 1000000 )
+
+The . refers to `pa_counties` - the data frame being passed through the
+pipe. So this is equivalent to:
+
+pa_counties \<- pa_counties %\>% mutate( area_sqkm =
+as.numeric(st_area(pa_counties)) / 1000000 )
+
+## Connections to Policy
+
+**Typical spatial analysis steps:**
+
+1.  **Load data** → Get spatial boundaries and attribute data
+2.  **Check projections** → Transform to appropriate CRS
+3.  **Join datasets** → Combine spatial and non-spatial data
+4.  **Spatial operations** → Buffers, intersections, distance
+    calculations
+5.  **Aggregation** → Summarize across spatial units
+6.  **Visualization** → Maps and charts
+7.  **Interpretation** → Policy recommendations
+
+Use `st_filter()` when:
+
+-   "Which census tracts touch hospital service areas?"
+-   You want to select/identify features based on location
+-   You need complete features with their original boundaries
+-   You're counting: "How many tracts are near hospitals?"
+
+Use `st_intersection()` when:
+
+-   "What is the area of overlap between tracts and service zones?"
+-   You need to calculate areas, populations, or other measures within
+    specific boundaries
+-   You're doing spatial overlay analysis
+-   You need to clip data to a study area
+
+## Reflection
+
+Major takeaway is the focus in coordinate systems.
