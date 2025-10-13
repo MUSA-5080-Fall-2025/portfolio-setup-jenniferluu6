@@ -162,7 +162,6 @@ Where:
 
 **Impact:** Standard errors are wrong → p-values misleading
 
-::: {.callout-warning}
 ## What Heteroskedasticity Tells You
 
 **Often a symptom of model misspecification:**
@@ -172,7 +171,6 @@ Where:
 - Ask: "What's different about observations with large residuals?"
 
 **Example:** Population alone predicts income well in rural counties, but large urban counties need additional variables (education, industry) to predict accurately.
-:::
 
 ## Reflection
 

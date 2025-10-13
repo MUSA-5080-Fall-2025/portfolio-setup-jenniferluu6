@@ -425,5 +425,103 @@
     "title": "Week 1 Notes - Course Introduction",
     "section": "Reflection",
     "text": "Reflection\nI am excited to learn how to use these things that we have learned on a project. I am interested in what a pipeline will look like for me."
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html",
+    "href": "weekly-notes/week-05-notes.html",
+    "title": "Week 5 notes",
+    "section": "",
+    "text": "The Statistical Learning Framework: What are we actually doing?\nTwo goals: Understanding relationships vs Making predictions\nBuilding your first model with PA census data\nModel evaluation: How do we know if it’s any good?\nChecking assumptions: When can we trust the model?\nImproving predictions: Transformations, multiple variables\n\nWe observe data: counties, income, population, education, etc.\nWe believe there’s some relationship between these variables."
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-05-notes.html#key-concepts-learned",
+    "title": "Week 5 notes",
+    "section": "",
+    "text": "The Statistical Learning Framework: What are we actually doing?\nTwo goals: Understanding relationships vs Making predictions\nBuilding your first model with PA census data\nModel evaluation: How do we know if it’s any good?\nChecking assumptions: When can we trust the model?\nImproving predictions: Transformations, multiple variables\n\nWe observe data: counties, income, population, education, etc.\nWe believe there’s some relationship between these variables."
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#formalizing-the-relationship",
+    "href": "weekly-notes/week-05-notes.html#formalizing-the-relationship",
+    "title": "Week 5 notes",
+    "section": "Formalizing the Relationship",
+    "text": "Formalizing the Relationship\nFor any quantitative response Y and predictors X₁, X₂, … Xₚ:\n\\[Y = f(X) + \\epsilon\\]\nWhere:\n\nf = the systematic information X provides about Y\nε = random error (irreducible)"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#how-do-we-estimate-f",
+    "href": "weekly-notes/week-05-notes.html#how-do-we-estimate-f",
+    "title": "Week 5 notes",
+    "section": "How Do We Estimate f?",
+    "text": "How Do We Estimate f?\nTwo broad approaches:\nParametric Methods\n\nMake an assumption about the functional form (e.g., linear)\nReduces problem to estimating a few parameters\nEasier to interpret\nThis is what we’ll focus on\n\nNon-Parametric Methods\n\nDon’t assume a specific form\nMore flexible\nRequire more data\nHarder to interpret\nParametric (blue): We assume f is linear, then estimate β₀ and β₁\nNon-parametric (green): We let the data determine the shape of f\n\nThe method: Ordinary Least Squares (OLS)"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#why-linear-regression",
+    "href": "weekly-notes/week-05-notes.html#why-linear-regression",
+    "title": "Week 5 notes",
+    "section": "Why Linear Regression?",
+    "text": "Why Linear Regression?\nAdvantages:\n\nSimple and interpretable\nWell-understood properties\nWorks remarkably well for many problems\nFoundation for more complex methods\n\nLimitations:\n\nAssumes linearity (we’ll test this)\nSensitive to outliers\nMakes several assumptions (we’ll check these)"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#interpreting-coefficients",
+    "href": "weekly-notes/week-05-notes.html#interpreting-coefficients",
+    "title": "Week 5 notes",
+    "section": "Interpreting Coefficients",
+    "text": "Interpreting Coefficients\nIntercept (β₀) = $62,855\n\nExpected income when population = 0\nNot usually meaningful in practice\n\nSlope (β₁) = $0.02\n\nFor each additional person, income increases by $0.02\nMore useful: For every 1,000 people, income increases by ~$20\n\nIs this relationship real?\n\np-value &lt; 0.001 → Very unlikely to see this if true β₁ = 0\nWe can reject the null hypothesis"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#statistical-significance",
+    "href": "weekly-notes/week-05-notes.html#statistical-significance",
+    "title": "Week 5 notes",
+    "section": "Statistical Significance",
+    "text": "Statistical Significance\nThe logic:\n\nNull hypothesis (H₀): β₁ = 0 (no relationship)\nOur estimate: β₁ = 0.02\nQuestion: Could we get 0.02 just by chance if H₀ is true?\n\nt-statistic: How many standard errors away from 0?\n\nBigger |t| = more confidence the relationship is real\n\np-value: Probability of seeing our estimate if H₀ is true\n\nSmall p → reject H₀, conclude relationship exists\n\nKey Metrics (Averaged Across 10 Folds)\n\nRMSE: Typical prediction error (~$12,578)\nR²: % of variation explained (0.564)\nMAE: Average absolute error (~$8,860) - easier to interpret"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#why-this-matters-for-prediction",
+    "href": "weekly-notes/week-05-notes.html#why-this-matters-for-prediction",
+    "title": "Week 5 notes",
+    "section": "Why This Matters for Prediction",
+    "text": "Why This Matters for Prediction\nLinearity violations hurt predictions, not just inference:\n\nIf the true relationship is curved and you fit a straight line, you’ll systematically underpredict in some regions and overpredict in others\nBiased predictions in predictable ways (not random errors!)\nResidual plots should show random scatter - any pattern means your model is missing something systematic\n\nInterpretation:\n\np &gt; 0.05: Constant variance assumption OK\np &lt; 0.05: Evidence of heteroscedasticity\n\nIf detected, solutions:\n\nTransform Y (try log(income))\nRobust standard errors\nAdd missing variables\nAccept it (point predictions still OK for prediction goals)\n\n\nCoding Techniques\nThe model: Predicted healthcare needs using costs as proxy\nTechnically: Probably had good R², low prediction error (good “fit”)\nEthically: Learned and amplified existing discrimination\nR² = 0.208\n“21% of variation in income is explained by population”"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#questions-challenges",
+    "href": "weekly-notes/week-05-notes.html#questions-challenges",
+    "title": "Week 5 notes",
+    "section": "Questions & Challenges",
+    "text": "Questions & Challenges"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#assumption-2-constant-variance",
+    "href": "weekly-notes/week-05-notes.html#assumption-2-constant-variance",
+    "title": "Week 5 notes",
+    "section": "Assumption 2: Constant Variance",
+    "text": "Assumption 2: Constant Variance\nHeteroscedasticity: Variance changes across X\nImpact: Standard errors are wrong → p-values misleading"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#reflection",
+    "href": "weekly-notes/week-05-notes.html#reflection",
+    "title": "Week 5 notes",
+    "section": "Reflection",
+    "text": "Reflection\nWhat we assume: Residuals are normally distributed\nWhy it matters:\n\nLess critical for point predictions (unbiased regardless)\nImportant for confidence intervals and prediction intervals\nNeeded for valid hypothesis tests (t-tests, F-tests)"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#assumption-3-no-multicollinearity",
+    "href": "weekly-notes/week-05-notes.html#assumption-3-no-multicollinearity",
+    "title": "Week 5 notes",
+    "section": "Assumption 3: No Multicollinearity",
+    "text": "Assumption 3: No Multicollinearity\nFor multiple regression: Predictors shouldn’t be too correlated\nWhy it matters: Coefficients become unstable, hard to interpret"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#assumption-4-no-influential-outliers",
+    "href": "weekly-notes/week-05-notes.html#assumption-4-no-influential-outliers",
+    "title": "Week 5 notes",
+    "section": "Assumption 4: No Influential Outliers",
+    "text": "Assumption 4: No Influential Outliers\nNot all outliers are problems - only those with high leverage AND large residuals"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#what-heteroskedasticity-tells-you",
+    "href": "weekly-notes/week-05-notes.html#what-heteroskedasticity-tells-you",
+    "title": "Week 5 notes",
+    "section": "What Heteroskedasticity Tells You",
+    "text": "What Heteroskedasticity Tells You\nOften a symptom of model misspecification:\n\nModel fits well for some values (e.g., small counties) but poorly for others (large counties)\nMay indicate missing variables that matter more at certain X values\nAsk: “What’s different about observations with large residuals?”\n\nExample: Population alone predicts income well in rural counties, but large urban counties need additional variables (education, industry) to predict accurately."
   }
 ]
