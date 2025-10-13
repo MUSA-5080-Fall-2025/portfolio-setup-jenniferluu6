@@ -1,0 +1,197 @@
+---
+title: "Week 5 notes"
+date: "10/06/25"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Key Concepts Learned
+
+1. **The Statistical Learning Framework:** What are we actually doing?
+2. **Two goals:** Understanding relationships vs Making predictions
+3. **Building your first model** with PA census data
+4. **Model evaluation:** How do we know if it's any good?
+5. **Checking assumptions:** When can we trust the model?
+6. **Improving predictions:** Transformations, multiple variables
+
+We observe data: counties, income, population, education, etc.
+
+We believe there's some **relationship** between these variables.
+
+## Formalizing the Relationship
+
+For any quantitative response Y and predictors X₁, X₂, ... Xₚ:
+
+$$Y = f(X) + \epsilon$$
+
+Where:
+
+- **f** = the systematic information X provides about Y
+- **ε** = random error (irreducible)
+
+## How Do We Estimate f?
+
+**Two broad approaches:**
+
+**Parametric Methods**
+
+- Make an assumption about the functional form (e.g., linear)
+- Reduces problem to estimating a few parameters
+- Easier to interpret
+- **This is what we'll focus on**
+
+**Non-Parametric Methods**
+
+- Don't assume a specific form
+- More flexible
+- Require more data
+- Harder to interpret
+
+- **Parametric (blue):** We assume f is linear, then estimate β₀ and β₁
+- **Non-parametric (green):** We let the data determine the shape of f
+
+**The method:** Ordinary Least Squares (OLS)
+
+## Why Linear Regression?
+
+**Advantages:**
+
+- Simple and interpretable
+- Well-understood properties
+- Works remarkably well for many problems
+- Foundation for more complex methods
+
+**Limitations:**
+
+- Assumes linearity (we'll test this)
+- Sensitive to outliers
+- Makes several assumptions (we'll check these)
+
+## Interpreting Coefficients
+
+**Intercept (β₀) = $62,855**
+
+- Expected income when population = 0
+- Not usually meaningful in practice
+
+**Slope (β₁) = $0.02**
+
+- For each additional person, income increases by $0.02
+- **More useful:** For every 1,000 people, income increases by ~$20
+
+**Is this relationship real?**
+
+- p-value < 0.001 → Very unlikely to see this if true β₁ = 0
+- We can reject the null hypothesis
+
+
+## Statistical Significance
+
+**The logic:**
+
+1. **Null hypothesis (H₀):** β₁ = 0 (no relationship)
+2. **Our estimate:** β₁ = 0.02
+3. **Question:** Could we get 0.02 just by chance if H₀ is true?
+
+**t-statistic:** How many standard errors away from 0?
+
+- Bigger |t| = more confidence the relationship is real
+
+**p-value:** Probability of seeing our estimate if H₀ is true
+
+- Small p → reject H₀, conclude relationship exists
+
+**Key Metrics (Averaged Across 10 Folds)**
+
+- **RMSE:** Typical prediction error (~$12,578)
+- **R²:** % of variation explained (0.564)
+- **MAE:** Average absolute error (~$8,860) - easier to interpret
+
+## Why This Matters for Prediction
+
+**Linearity violations hurt predictions, not just inference:**
+
+- If the true relationship is curved and you fit a straight line, you'll systematically underpredict in some regions and overpredict in others
+- **Biased predictions** in predictable ways (not random errors!)
+- Residual plots should show **random scatter** - any pattern means your model is missing something systematic
+
+**Interpretation:**
+
+- **p > 0.05:** Constant variance assumption OK
+- **p < 0.05:** Evidence of heteroscedasticity
+
+**If detected, solutions:**
+
+1. Transform Y (try `log(income)`)
+2. Robust standard errors
+3. Add missing variables
+4. Accept it (point predictions still OK for prediction goals)
+
+
+#### Coding Techniques
+
+
+**The model:** Predicted healthcare needs using costs as proxy
+
+**Technically:** Probably had good R², low prediction error (good "fit")
+
+**Ethically:** Learned and amplified existing discrimination
+
+**R² = 0.208**
+
+"21% of variation in income is explained by population"
+
+
+## Questions & Challenges
+
+# The Problem: Overfitting
+
+**Three scenarios:**
+
+1. **Underfitting:** Model too simple (high bias)
+2. **Good fit:** Captures pattern without noise
+3. **Overfitting:** Memorizes training data (high variance)
+
+**The danger:** High R² doesn't mean good predictions!
+**Solution:** Hold out some data to test predictions
+
+## Assumption 2: Constant Variance
+
+**Heteroscedasticity:** Variance changes across X
+
+**Impact:** Standard errors are wrong → p-values misleading
+
+::: {.callout-warning}
+## What Heteroskedasticity Tells You
+
+**Often a symptom of model misspecification:**
+
+- Model fits well for some values (e.g., small counties) but poorly for others (large counties)
+- May indicate **missing variables** that matter more at certain X values
+- Ask: "What's different about observations with large residuals?"
+
+**Example:** Population alone predicts income well in rural counties, but large urban counties need additional variables (education, industry) to predict accurately.
+:::
+
+## Reflection
+
+**What we assume:** Residuals are normally distributed
+
+**Why it matters:**
+
+- Less critical for **point predictions** (unbiased regardless)
+- Important for **confidence intervals** and **prediction intervals**
+- Needed for valid hypothesis tests (t-tests, F-tests)
+
+## Assumption 3: No Multicollinearity
+**For multiple regression:** Predictors shouldn't be too correlated
+
+**Why it matters:** Coefficients become unstable, hard to interpret
+
+---
+
+## Assumption 4: No Influential Outliers
+
+**Not all outliers are problems** - only those with high leverage AND large residuals
+
