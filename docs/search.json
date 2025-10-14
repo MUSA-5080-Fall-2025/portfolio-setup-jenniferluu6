@@ -119,109 +119,109 @@
     "text": "Reflection\nMajor takeaway is the focus in coordinate systems."
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html",
-    "href": "weekly-notes/week-03-notes.html",
-    "title": "Week 3 notes",
+    "objectID": "weekly-notes/week-05-notes.html",
+    "href": "weekly-notes/week-05-notes.html",
+    "title": "Week 5 notes",
     "section": "",
-    "text": "Anscombe’s Quartet and the limits of summary statistics\n- Depending on the way information is visualized, it can show completely different patterns.\n- “How to lie with stats/maps”\n- Outliers may represent important communities\n- Relationships aren’t always linear\nExploratory Data Analysis is detective work\nData → Aesthetics → Geometries → Visual\n- Data: Your data set (census data, survey responses, etc.)\n- Aesthetics: What variables map to visual properties (x, y, color, size)\n- Geometries: How to display the data (points, bars, lines)\n- Additional layers: Scales, themes, facets, annotations"
+    "text": "The Statistical Learning Framework: What are we actually doing?\nTwo goals: Understanding relationships vs Making predictions\nBuilding your first model with PA census data\nModel evaluation: How do we know if it’s any good?\nChecking assumptions: When can we trust the model?\nImproving predictions: Transformations, multiple variables\n\nWe observe data: counties, income, population, education, etc.\nWe believe there’s some relationship between these variables."
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html#key-concepts-learned",
-    "href": "weekly-notes/week-03-notes.html#key-concepts-learned",
-    "title": "Week 3 notes",
+    "objectID": "weekly-notes/week-05-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-05-notes.html#key-concepts-learned",
+    "title": "Week 5 notes",
     "section": "",
-    "text": "Anscombe’s Quartet and the limits of summary statistics\n- Depending on the way information is visualized, it can show completely different patterns.\n- “How to lie with stats/maps”\n- Outliers may represent important communities\n- Relationships aren’t always linear\nExploratory Data Analysis is detective work\nData → Aesthetics → Geometries → Visual\n- Data: Your data set (census data, survey responses, etc.)\n- Aesthetics: What variables map to visual properties (x, y, color, size)\n- Geometries: How to display the data (points, bars, lines)\n- Additional layers: Scales, themes, facets, annotations"
+    "text": "The Statistical Learning Framework: What are we actually doing?\nTwo goals: Understanding relationships vs Making predictions\nBuilding your first model with PA census data\nModel evaluation: How do we know if it’s any good?\nChecking assumptions: When can we trust the model?\nImproving predictions: Transformations, multiple variables\n\nWe observe data: counties, income, population, education, etc.\nWe believe there’s some relationship between these variables."
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html#coding-techniques",
-    "href": "weekly-notes/week-03-notes.html#coding-techniques",
-    "title": "Week 3 notes",
-    "section": "Coding Techniques",
-    "text": "Coding Techniques\nggplot(data = your_data) +   aes(x = variable1, y = variable2) +   geom_something() +   additional_layers()\nAesthetics map data to visual properties:\n\nx, y - position\ncolor - point/line color\nfill - area fill color\nsize - point/line size\nshape - point shape\nalpha - transparency\nleft_join() - Keep all rows from left dataset\nright_join() - Keep all rows from right dataset\ninner_join() - Keep only rows that match in both\nfull_join() - Keep all rows from both datasets\n\nImportant: Aesthetics go inside aes(), constants go outside"
+    "objectID": "weekly-notes/week-05-notes.html#formalizing-the-relationship",
+    "href": "weekly-notes/week-05-notes.html#formalizing-the-relationship",
+    "title": "Week 5 notes",
+    "section": "Formalizing the Relationship",
+    "text": "Formalizing the Relationship\nFor any quantitative response Y and predictors X₁, X₂, … Xₚ:\n\\[Y = f(X) + \\epsilon\\]\nWhere:\n\nf = the systematic information X provides about Y\nε = random error (irreducible)"
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html#questions-challenges",
-    "href": "weekly-notes/week-03-notes.html#questions-challenges",
-    "title": "Week 3 notes",
+    "objectID": "weekly-notes/week-05-notes.html#how-do-we-estimate-f",
+    "href": "weekly-notes/week-05-notes.html#how-do-we-estimate-f",
+    "title": "Week 5 notes",
+    "section": "How Do We Estimate f?",
+    "text": "How Do We Estimate f?\nTwo broad approaches:\nParametric Methods\n\nMake an assumption about the functional form (e.g., linear)\nReduces problem to estimating a few parameters\nEasier to interpret\nThis is what we’ll focus on\n\nNon-Parametric Methods\n\nDon’t assume a specific form\nMore flexible\nRequire more data\nHarder to interpret\nParametric (blue): We assume f is linear, then estimate β₀ and β₁\nNon-parametric (green): We let the data determine the shape of f\n\nThe method: Ordinary Least Squares (OLS)"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#why-linear-regression",
+    "href": "weekly-notes/week-05-notes.html#why-linear-regression",
+    "title": "Week 5 notes",
+    "section": "Why Linear Regression?",
+    "text": "Why Linear Regression?\nAdvantages:\n\nSimple and interpretable\nWell-understood properties\nWorks remarkably well for many problems\nFoundation for more complex methods\n\nLimitations:\n\nAssumes linearity (we’ll test this)\nSensitive to outliers\nMakes several assumptions (we’ll check these)"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#interpreting-coefficients",
+    "href": "weekly-notes/week-05-notes.html#interpreting-coefficients",
+    "title": "Week 5 notes",
+    "section": "Interpreting Coefficients",
+    "text": "Interpreting Coefficients\nIntercept (β₀) = $62,855\n\nExpected income when population = 0\nNot usually meaningful in practice\n\nSlope (β₁) = $0.02\n\nFor each additional person, income increases by $0.02\nMore useful: For every 1,000 people, income increases by ~$20\n\nIs this relationship real?\n\np-value &lt; 0.001 → Very unlikely to see this if true β₁ = 0\nWe can reject the null hypothesis"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#statistical-significance",
+    "href": "weekly-notes/week-05-notes.html#statistical-significance",
+    "title": "Week 5 notes",
+    "section": "Statistical Significance",
+    "text": "Statistical Significance\nThe logic:\n\nNull hypothesis (H₀): β₁ = 0 (no relationship)\nOur estimate: β₁ = 0.02\nQuestion: Could we get 0.02 just by chance if H₀ is true?\n\nt-statistic: How many standard errors away from 0?\n\nBigger |t| = more confidence the relationship is real\n\np-value: Probability of seeing our estimate if H₀ is true\n\nSmall p → reject H₀, conclude relationship exists\n\nKey Metrics (Averaged Across 10 Folds)\n\nRMSE: Typical prediction error (~$12,578)\nR²: % of variation explained (0.564)\nMAE: Average absolute error (~$8,860) - easier to interpret"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#why-this-matters-for-prediction",
+    "href": "weekly-notes/week-05-notes.html#why-this-matters-for-prediction",
+    "title": "Week 5 notes",
+    "section": "Why This Matters for Prediction",
+    "text": "Why This Matters for Prediction\nLinearity violations hurt predictions, not just inference:\n\nIf the true relationship is curved and you fit a straight line, you’ll systematically underpredict in some regions and overpredict in others\nBiased predictions in predictable ways (not random errors!)\nResidual plots should show random scatter - any pattern means your model is missing something systematic\n\nInterpretation:\n\np &gt; 0.05: Constant variance assumption OK\np &lt; 0.05: Evidence of heteroscedasticity\n\nIf detected, solutions:\n\nTransform Y (try log(income))\nRobust standard errors\nAdd missing variables\nAccept it (point predictions still OK for prediction goals)\n\n\nCoding Techniques\nThe model: Predicted healthcare needs using costs as proxy\nTechnically: Probably had good R², low prediction error (good “fit”)\nEthically: Learned and amplified existing discrimination\nR² = 0.208\n“21% of variation in income is explained by population”"
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#questions-challenges",
+    "href": "weekly-notes/week-05-notes.html#questions-challenges",
+    "title": "Week 5 notes",
     "section": "Questions & Challenges",
-    "text": "Questions & Challenges\nPattern: Smaller populations have higher uncertainty\nEthical implication: These communities might be systematically under counted\n\n\nReport the corresponding MOEs of ACS estimates - Always include margin of error values\nInclude a footnote when not reporting MOEs - Explicitly acknowledge omission\n\nProvide context for (un)reliability - Use coefficient of variation (CV):\n\nCV &lt; 12% = reliable (green coding)\nCV 12-40% = somewhat reliable (yellow)\nCV &gt; 40% = unreliable (red coding)\n\nReduce statistical uncertainty - Collapse data detail, aggregate geographies, use multi-year estimates\nAlways conduct statistical significance tests when comparing ACS estimates over time"
+    "text": "Questions & Challenges"
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html#connections-to-policy",
-    "href": "weekly-notes/week-03-notes.html#connections-to-policy",
-    "title": "Week 3 notes",
-    "section": "Connections to Policy",
-    "text": "Connections to Policy\nResearch finding: Only 27% of planners warn users about unreliable ACS data\n- Most planners don’t report margins of error\n- Many lack training on statistical uncertainty\nCommon problems in government data presentation:\n- Misleading scales or axes\n- Cherry-picked time periods\n- Hidden or ignored uncertainty\n- Missing context about data reliability"
+    "objectID": "weekly-notes/week-05-notes.html#assumption-2-constant-variance",
+    "href": "weekly-notes/week-05-notes.html#assumption-2-constant-variance",
+    "title": "Week 5 notes",
+    "section": "Assumption 2: Constant Variance",
+    "text": "Assumption 2: Constant Variance\nHeteroscedasticity: Variance changes across X\nImpact: Standard errors are wrong → p-values misleading"
   },
   {
-    "objectID": "weekly-notes/week-03-notes.html#reflection",
-    "href": "weekly-notes/week-03-notes.html#reflection",
-    "title": "Week 3 notes",
+    "objectID": "weekly-notes/week-05-notes.html#what-heteroskedasticity-tells-you",
+    "href": "weekly-notes/week-05-notes.html#what-heteroskedasticity-tells-you",
+    "title": "Week 5 notes",
+    "section": "What Heteroskedasticity Tells You",
+    "text": "What Heteroskedasticity Tells You\nOften a symptom of model misspecification:\n\nModel fits well for some values (e.g., small counties) but poorly for others (large counties)\nMay indicate missing variables that matter more at certain X values\nAsk: “What’s different about observations with large residuals?”\n\nExample: Population alone predicts income well in rural counties, but large urban counties need additional variables (education, industry) to predict accurately."
+  },
+  {
+    "objectID": "weekly-notes/week-05-notes.html#reflection",
+    "href": "weekly-notes/week-05-notes.html#reflection",
+    "title": "Week 5 notes",
     "section": "Reflection",
-    "text": "Reflection\nReminder to study through definitions more closely."
+    "text": "Reflection\nWhat we assume: Residuals are normally distributed\nWhy it matters:\n\nLess critical for point predictions (unbiased regardless)\nImportant for confidence intervals and prediction intervals\nNeeded for valid hypothesis tests (t-tests, F-tests)"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Welcome to my MUSA 5080 Portfolio! Please follow me on my journey through Public Policy Analytics (MUSA 5080). Hopefully I will be able to analyze spatial data and create meaningful visualizations at the end of this course :O\n\n\nAdvanced spatial analysis and data science for urban planning and public policy.\n\n\n\n\nWeekly Notes: My learning reflections and key concepts\nAssignments: Completed assignments and analyses\nFinal Project: Capstone modeling challenge\n\n\n\n\nHi, my name is Jun and I recently started my Masters of Urban Spatial Analytics at The University of Pennsylvania! My background is in affordable housing and community development construction engineering. Though I loved my work, I decided that I wanted to do research that would push new projects that I believe in instead of building the projects that had already been determined.\nTo learn more about my background, please refer to the “About” section located in the banner across the top of this page!\n\n\n\n\nEmail: jjluu@upenn.edu\nGitHub: jenniferluu6"
+    "objectID": "weekly-notes/week-05-notes.html#assumption-3-no-multicollinearity",
+    "href": "weekly-notes/week-05-notes.html#assumption-3-no-multicollinearity",
+    "title": "Week 5 notes",
+    "section": "Assumption 3: No Multicollinearity",
+    "text": "Assumption 3: No Multicollinearity\nFor multiple regression: Predictors shouldn’t be too correlated\nWhy it matters: Coefficients become unstable, hard to interpret"
   },
   {
-    "objectID": "index.html#about-this-course",
-    "href": "index.html#about-this-course",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Advanced spatial analysis and data science for urban planning and public policy."
+    "objectID": "weekly-notes/week-05-notes.html#assumption-4-no-influential-outliers",
+    "href": "weekly-notes/week-05-notes.html#assumption-4-no-influential-outliers",
+    "title": "Week 5 notes",
+    "section": "Assumption 4: No Influential Outliers",
+    "text": "Assumption 4: No Influential Outliers\nNot all outliers are problems - only those with high leverage AND large residuals"
   },
   {
-    "objectID": "index.html#portfolio-structure",
-    "href": "index.html#portfolio-structure",
-    "title": "MUSA 5080 Portfolio",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
     "section": "",
-    "text": "Weekly Notes: My learning reflections and key concepts\nAssignments: Completed assignments and analyses\nFinal Project: Capstone modeling challenge"
-  },
-  {
-    "objectID": "index.html#about-me",
-    "href": "index.html#about-me",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Hi, my name is Jun and I recently started my Masters of Urban Spatial Analytics at The University of Pennsylvania! My background is in affordable housing and community development construction engineering. Though I loved my work, I decided that I wanted to do research that would push new projects that I believe in instead of building the projects that had already been determined.\nTo learn more about my background, please refer to the “About” section located in the banner across the top of this page!"
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "MUSA 5080 Portfolio",
-    "section": "",
-    "text": "Email: jjluu@upenn.edu\nGitHub: jenniferluu6"
-  },
-  {
-    "objectID": "assignments/lab-05.html",
-    "href": "assignments/lab-05.html",
-    "title": "Lab 5",
-    "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 5 project."
-  },
-  {
-    "objectID": "assignments/lab-03.html",
-    "href": "assignments/lab-03.html",
-    "title": "Lab 3",
-    "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 3 project."
-  },
-  {
-    "objectID": "assignments/lab-02.html",
-    "href": "assignments/lab-02.html",
-    "title": "Lab 2",
-    "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 2 project."
-  },
-  {
-    "objectID": "assignments/lab-04.html",
-    "href": "assignments/lab-04.html",
-    "title": "Lab 4",
-    "section": "",
-    "text": "You’re early! Come back to see when I upload my Lab 4 project."
+    "text": "My name is Jennifer Luu, but I go by Jun (pronounced like June)! I am discovering my path of blending my lived experience and background in construction engineering with urban spatial analytics.\nI think the most effective way to tell you my story is by going through the cities I’ve lived and learned in. If you see a city you’re thinking about visiting, let me know! I would love to share recommendations or even help you plan your trip!\n\nMy Journey\nLeesburg, VA\nI grew up 1-1.5h outside of Washington D.C. It was in this politics-centered city where my flame of affordable housing ignited.\nBlacksburg, VA\nMy interest in working in affordable housing led me to Virginia Tech, where I majored in Construction Engineering and Management. GO HOKIES!\nChicago, IL\nI wanted to integrate myself into a city that with a strong history of housing reform and policy. It was here that I started to think about how my work in different construction projects were affecting the community that I was in. I began a personal research project in an attempt to quantify these effects.\nLos Angeles, CA\nDuring my time in LA, my research interests both expanded and deepened. I was able to see how housing directly affected healthcare and education.\nNew York City, NY\nI had the amazing opportunity to work on my dream project- the thing that I had worked for all through undergrad: renovation of low-income housing in East Brooklyn. I could go on about this, but I will spare you the reading. (Feel free to reach out to me if you want to talk about it!)\nPhiladelphia, PA\nIt all led to right here, The University of Pennsylvania. Though I loved working in affordable housing construction and it felt like that was what I was running towards since I was 16, I realized something else that I wanted. It is extremely important to do the work in the field, but I wanted to do research to support future projects.\nThanks for reading! I hope you’ll follow me to see where I go next! Maybe it’ll be another city, but maybe I’ll stay right here in Philly."
   },
   {
     "objectID": "assignments/assignment_1.html",
@@ -336,11 +336,151 @@
     "text": "Submission Checklist\nBefore submitting your portfolio link on Canvas:\n\nAll code chunks run without errors\nAll “[Fill this in]” prompts have been completed\nTables are properly formatted and readable\nExecutive summary addresses all four required components\nPortfolio navigation includes this assignment\nCensus API key is properly set\nDocument renders correctly to HTML\n\nRemember: Submit your portfolio URL on Canvas, not the file itself. Your assignment should be accessible at your-portfolio-url/assignments/assignment_1/your_file_name.html"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
+    "objectID": "assignments/lab-05.html",
+    "href": "assignments/lab-05.html",
+    "title": "Lab 5",
     "section": "",
-    "text": "My name is Jennifer Luu, but I go by Jun (pronounced like June)! I am discovering my path of blending my lived experience and background in construction engineering with urban spatial analytics.\nI think the most effective way to tell you my story is by going through the cities I’ve lived and learned in. If you see a city you’re thinking about visiting, let me know! I would love to share recommendations or even help you plan your trip!\n\nMy Journey\nLeesburg, VA\nI grew up 1-1.5h outside of Washington D.C. It was in this politics-centered city where my flame of affordable housing ignited.\nBlacksburg, VA\nMy interest in working in affordable housing led me to Virginia Tech, where I majored in Construction Engineering and Management. GO HOKIES!\nChicago, IL\nI wanted to integrate myself into a city that with a strong history of housing reform and policy. It was here that I started to think about how my work in different construction projects were affecting the community that I was in. I began a personal research project in an attempt to quantify these effects.\nLos Angeles, CA\nDuring my time in LA, my research interests both expanded and deepened. I was able to see how housing directly affected healthcare and education.\nNew York City, NY\nI had the amazing opportunity to work on my dream project- the thing that I had worked for all through undergrad: renovation of low-income housing in East Brooklyn. I could go on about this, but I will spare you the reading. (Feel free to reach out to me if you want to talk about it!)\nPhiladelphia, PA\nIt all led to right here, The University of Pennsylvania. Though I loved working in affordable housing construction and it felt like that was what I was running towards since I was 16, I realized something else that I wanted. It is extremely important to do the work in the field, but I wanted to do research to support future projects.\nThanks for reading! I hope you’ll follow me to see where I go next! Maybe it’ll be another city, but maybe I’ll stay right here in Philly."
+    "text": "You’re early! Come back to see when I upload my Lab 5 project."
+  },
+  {
+    "objectID": "assignments/lab-03.html",
+    "href": "assignments/lab-03.html",
+    "title": "Lab 3",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 3 project."
+  },
+  {
+    "objectID": "assignments/lab-04.html",
+    "href": "assignments/lab-04.html",
+    "title": "Lab 4",
+    "section": "",
+    "text": "You’re early! Come back to see when I upload my Lab 4 project."
+  },
+  {
+    "objectID": "assignments/assignment_2/Luu_Jun_Assignment2.html",
+    "href": "assignments/assignment_2/Luu_Jun_Assignment2.html",
+    "title": "Assignment 2: Spatial Analysis and Visualization",
+    "section": "",
+    "text": "Learning Objectives: - Apply spatial operations to answer policy-relevant research questions - Integrate census demographic data with spatial analysis - Create publication-quality visualizations and maps - Work with spatial data from multiple sources - Communicate findings effectively for policy audiences"
+  },
+  {
+    "objectID": "assignments/assignment_2/Luu_Jun_Assignment2.html#assignment-overview",
+    "href": "assignments/assignment_2/Luu_Jun_Assignment2.html#assignment-overview",
+    "title": "Assignment 2: Spatial Analysis and Visualization",
+    "section": "",
+    "text": "Learning Objectives: - Apply spatial operations to answer policy-relevant research questions - Integrate census demographic data with spatial analysis - Create publication-quality visualizations and maps - Work with spatial data from multiple sources - Communicate findings effectively for policy audiences"
+  },
+  {
+    "objectID": "assignments/assignment_2/Luu_Jun_Assignment2.html#part-1-healthcare-access-for-vulnerable-populations",
+    "href": "assignments/assignment_2/Luu_Jun_Assignment2.html#part-1-healthcare-access-for-vulnerable-populations",
+    "title": "Assignment 2: Spatial Analysis and Visualization",
+    "section": "Part 1: Healthcare Access for Vulnerable Populations",
+    "text": "Part 1: Healthcare Access for Vulnerable Populations\n\nResearch Question\nWhich Pennsylvania counties have the highest proportion of vulnerable populations (elderly + low-income) living far from hospitals?\nYour analysis should identify counties that should be priorities for healthcare investment and policy intervention.\n\n\nRequired Analysis Steps\nComplete the following analysis, documenting each step with code and brief explanations:\n\nStep 1: Data Collection (5 points)\nLoad the required spatial data: - Pennsylvania county boundaries - Pennsylvania hospitals (from lecture data) - Pennsylvania census tracts\nYour Task:\nQuestions to answer: - How many hospitals are in your dataset? - How many census tracts? - What coordinate reference system is each dataset in?\n\n\n\nStep 2: Get Demographic Data\nUse tidycensus to download tract-level demographic data for Pennsylvania.\nRequired variables: - Total population - Median household income - Population 65 years and over (you may need to sum multiple age categories)\nYour Task:\n\nacs_vars &lt;- load_variables(2022, \"acs5\", cache = TRUE)\n\n# Get demographic data from ACS\n\ncensus_api_key(Sys.getenv(\"368bf145f527c34904bbbc75ef3158887059279a\"))\n\nvariables &lt;- c(\n  median_household_income = \"B19013_001\",\n  total_population = \"B01003_001\",\n  male_65_75 = \"B01001A_014\",\n  male_75_85 = \"B01001A_015\",\n  male_85_over = \"B01001A_016\",\n  female_65_75 = \"B01001A_029\",\n  female_75_85 = \"B01001A_030\",\n  female_85_over = \"B01001A_031\"\n)\n\npa_tract_acs &lt;- get_acs(\n  geography = \"tract\",\n  state = \"PA\",\n  variables = variables,\n  year = 2022,\n  survey = \"acs5\",\n  cache_table = TRUE, \n  output = \"wide\"\n)\n\npa_tract_acs &lt;- pa_tract_acs %&gt;%\n  mutate(\n    pop_65_overE = male_65_75E + male_75_85E + male_85_overE +\n                   female_65_75E + female_75_85E + female_85_overE\n  )\n\n# Join to tract boundaries\ntracts_with_data &lt;- pa_tracts %&gt;%\n  left_join(pa_tract_acs, by = \"GEOID\")\n\n# - What year of ACS data are you using? \nacs_year &lt;- 2022\ncat(\"ACS Year:\", acs_year, \"\\n\")\n\nACS Year: 2022 \n\n# How many tracts have missing income data? \nmissing_income &lt;- sum(is.na(tracts_with_data$median_household_incomeE))\ncat(\"Number of tracts with missing income data:\", missing_income, \"\\n\")\n\nNumber of tracts with missing income data: 62 \n\n# What is the median income across all PA census tracts? \nmedian_income_statewide &lt;- median(tracts_with_data$median_household_incomeE, na.rm = TRUE)\ncat(\"Median income across all PA tracts: $\", round(median_income_statewide, 0), \"\\n\")\n\nMedian income across all PA tracts: $ 70188 \n\n\nQuestions to answer: - What year of ACS data are you using? - How many tracts have missing income data? - What is the median income across all PA census tracts?\n\n\n\nStep 3: Define Vulnerable Populations\nIdentify census tracts with vulnerable populations based on TWO criteria: 1. Low median household income (choose an appropriate threshold) 2. Significant elderly population (choose an appropriate threshold)\nYour Task:\n\n# Filter for vulnerable tracts based on your criteria\ntracts_with_data &lt;- tracts_with_data %&gt;%\n  mutate(\n    percent_65_over = (pop_65_overE / total_populationE) * 100\n  )\n\nincome_threshold &lt;- quantile(tracts_with_data$median_household_incomeE, probs = 0.25, na.rm = TRUE)\nage_threshold &lt;- 20\n\ntracts_with_data &lt;- tracts_with_data %&gt;%\n  mutate(\n    low_income = median_household_incomeE &lt;= income_threshold, \n    elderly = percent_65_over &gt;= age_threshold,    \n    vulnerable = low_income & elderly \n  )\n\n# 1. What income threshold did you choose and why?\ncat(\"Income threshold: $\", income_threshold, \n    \", which is the bottom quartile of income in Pennsylvania\\n\")\n\nIncome threshold: $ 55923.5 , which is the bottom quartile of income in Pennsylvania\n\n# 2. What elderly population threshold did you choose and why?\ncat(\"Elderly population threshold:\", age_threshold, \n    \"% , based on the Census Bureau. \\n\")\n\nElderly population threshold: 20 % , based on the Census Bureau. \n\n# 3. How many tracts meet your vulnerability criteria?\nnum_vulnerable &lt;- sum(tracts_with_data$vulnerable, na.rm = TRUE)\ncat(\"Number of vulnerable tracts:\", num_vulnerable, \"\\n\")\n\nNumber of vulnerable tracts: 197 \n\n# 4. What percentage of PA census tracts are considered vulnerable?\ntotal_tracts &lt;- nrow(tracts_with_data)\npct_vulnerable &lt;- (num_vulnerable / total_tracts) * 100\ncat(\"Percentage of vulnerable tracts in PA:\", round(pct_vulnerable, 2), \"%\\n\")\n\nPercentage of vulnerable tracts in PA: 5.72 %\n\n\nQuestions to answer: - What income threshold did you choose and why? - What elderly population threshold did you choose and why? - How many tracts meet your vulnerability criteria?\n- What percentage of PA census tracts are considered vulnerable by your definition?\n\n\n\nStep 4: Calculate Distance to Hospitals\nFor each vulnerable tract, calculate the distance to the nearest hospital.\nYour Task:\n\n# Transform to appropriate projected CRS\npa_counties_proj &lt;- st_transform(pa_counties, 3365)\npa_hospitals_proj &lt;- st_transform(pa_hospitals, 3365)\npa_tracts_proj &lt;- st_transform(tracts_with_data, 3365)\n\n# Calculate distance from each tract centroid to nearest hospital\nall_centroids &lt;- st_centroid(pa_tracts_proj)\n\nall_dist &lt;- st_distance(all_centroids, pa_hospitals_proj)\nall_centroids$nearest_hosp_ft &lt;- apply(all_dist, 1, min)\n\nall_centroids &lt;- all_centroids %&gt;%\n  mutate(nearest_hosp_mi = nearest_hosp_ft / 5280)\n\npa_centroids &lt;- pa_tracts_proj %&gt;%\n  left_join(\n    all_centroids %&gt;%\n      st_drop_geometry() %&gt;%\n      select(GEOID, nearest_hosp_mi),\n    by = \"GEOID\"\n  )\n\nnum_vul = sum(pa_centroids$vulnerable, na.rm = TRUE)\n\nvulnerable_tracts &lt;- pa_centroids %&gt;%\n  st_drop_geometry() %&gt;%\n  filter(vulnerable == TRUE)\n\n# 1. What is the average distance to the nearest hospital for vulnerable tracts?\navg_dist &lt;- mean(vulnerable_tracts$nearest_hosp_mi, na.rm = TRUE)\ncat(\"Average distance to nearest hospital:\", round(avg_dist, 2), \"miles\\n\")\n\nAverage distance to nearest hospital: 5.46 miles\n\n# 2. What is the maximum distance to the nearest hospital?\nmax_dist &lt;- max(vulnerable_tracts$nearest_hosp_mi, na.rm = TRUE)\ncat(\"Maximum distance to nearest hospital:\", round(max_dist, 2), \"miles\\n\")\n\nMaximum distance to nearest hospital: 25.62 miles\n\n# 3. How many vulnerable tracts are more than 15 miles from the nearest hospital?\nnum_far &lt;- sum(vulnerable_tracts$nearest_hosp_mi &gt; 15, na.rm = TRUE)\ncat(\"Number of vulnerable tracts &gt; 15 miles from nearest hospital:\", num_far, \"\\n\")\n\nNumber of vulnerable tracts &gt; 15 miles from nearest hospital: 13 \n\n# 4. What percentage of vulnerable tracts are &gt;15 miles away?\nover_15mi &lt;- (num_far / num_vul) * 100\ncat(\"Percentage of vulnerable tracts &gt; 15 miles from nearest hospital:\", round(over_15mi, 2), \"%\\n\")\n\nPercentage of vulnerable tracts &gt; 15 miles from nearest hospital: 6.6 %\n\n\nRequirements: - Use an appropriate projected coordinate system for Pennsylvania - Calculate distances in miles - Explain why you chose your projection: I used EPSG: 26918 (UTM Zone 18N) as the projected coordinate system because it preserves distance accuracy across Pennsylvania.\nQuestions to answer: - What is the average distance to the nearest hospital for vulnerable tracts? - What is the maximum distance? - How many vulnerable tracts are more than 15 miles from the nearest hospital?\n\n\n\nStep 5: Identify Underserved Areas\nDefine “underserved” as vulnerable tracts that are more than 15 miles from the nearest hospital.\nYour Task:\n\n# Create underserved variable\nunderserved_tracts &lt;- pa_centroids %&gt;%\n  st_drop_geometry() %&gt;%\n  filter(vulnerable == TRUE & nearest_hosp_mi &gt; 15)\n\npa_centroids &lt;- pa_centroids%&gt;%\n  mutate(\n    underserved = vulnerable & nearest_hosp_mi &gt; 15\n  )\n\nnum_underserved = sum(pa_centroids$underserved == TRUE, na.rm = TRUE)\n# 1. How many tracts are underserved?\ncat(\"Number of underserved tracts:\", num_underserved, \"\\n\")\n\nNumber of underserved tracts: 13 \n\n# 2. What percentage of vulnerable tracts are underserved?\npct_underserved &lt;- (num_underserved / num_vul) * 100\ncat(\"Percentage of vulnerable tracts that are underserved:\", round(pct_underserved, 2), \"%\\n\")\n\nPercentage of vulnerable tracts that are underserved: 6.6 %\n\n# 3. Does this surprise you? Why or why not?\ncat(\"This honestly does surprise me, because I thought that the number would be higher. I think that I could have decreased the elderly population percentage to 15%, but I will continue to use the information determined by the Census Bureau.\\n\")\n\nThis honestly does surprise me, because I thought that the number would be higher. I think that I could have decreased the elderly population percentage to 15%, but I will continue to use the information determined by the Census Bureau.\n\n\nQuestions to answer: - How many tracts are underserved? - What percentage of vulnerable tracts are underserved? - Does this surprise you? Why or why not?\n\n\n\nStep 6: Aggregate to County Level\nUse spatial joins and aggregation to calculate county-level statistics about vulnerable populations and hospital access.\nYour Task:\n\n# Spatial join tracts to counties\ncounty_tract_proj &lt;- pa_counties_proj %&gt;%\n  st_join(pa_centroids)\n\n\n# Aggregate statistics by county\ncounty_summary &lt;- county_tract_proj %&gt;%\n  st_drop_geometry() %&gt;%\n  group_by(COUNTY_NAM) %&gt;%\n  summarise(\n    num_vul_tracts = sum(vulnerable, na.rm = TRUE),\n    num_und_tracts = sum(vulnerable & nearest_hosp_mi &gt; 15, na.rm = TRUE),\n    pct_und_tracts = round((num_und_tracts/num_vul_tracts)*100, 2),\n    avg_vul_dist = round(mean(nearest_hosp_mi[vulnerable], na.rm = TRUE), 2),\n    total_vul_pop = round(sum(total_populationE[vulnerable], na.rm = TRUE), 2)\n  )\n\n# 1. Which 5 counties have the highest percentage of underserved vulnerable tracts?\ntop5_pct_underserved &lt;- county_summary %&gt;%\n  slice_max(pct_und_tracts, n = 5)\n\nkable(top5_pct_underserved, caption = \"Top 5 counties with the highest percentage of underserved vulnerable tracts\")\n\n\nTop 5 counties with the highest percentage of underserved vulnerable tracts\n\n\n\n\n\n\n\n\n\n\nCOUNTY_NAM\nnum_vul_tracts\nnum_und_tracts\npct_und_tracts\navg_vul_dist\ntotal_vul_pop\n\n\n\n\nCOLUMBIA\n1\n1\n100\n16.91\n918\n\n\nDAUPHIN\n1\n1\n100\n19.16\n4018\n\n\nMONROE\n1\n1\n100\n17.68\n1299\n\n\nPERRY\n2\n2\n100\n17.53\n5800\n\n\nCAMERON\n4\n2\n50\n14.88\n8919\n\n\nCLINTON\n2\n1\n50\n11.03\n5124\n\n\nSULLIVAN\n2\n1\n50\n13.53\n4828\n\n\n\n\n# 2. Which counties have the most vulnerable people living far from hospitals?\ntop_5_und_counties &lt;- county_summary %&gt;%\n  arrange(desc(total_vul_pop)) %&gt;%\n  slice_head(n = 5)\n\nkable(top_5_und_counties, caption = \"Counties with the most vulnerable people living far from hospitals\")\n\n\nCounties with the most vulnerable people living far from hospitals\n\n\n\n\n\n\n\n\n\n\nCOUNTY_NAM\nnum_vul_tracts\nnum_und_tracts\npct_und_tracts\navg_vul_dist\ntotal_vul_pop\n\n\n\n\nWESTMORELAND\n22\n0\n0\n3.47\n60018\n\n\nFAYETTE\n16\n0\n0\n4.96\n49722\n\n\nALLEGHENY\n20\n0\n0\n2.61\n46795\n\n\nCLEARFIELD\n10\n3\n30\n12.80\n34060\n\n\nCAMBRIA\n13\n0\n0\n6.72\n31052\n\n\n\n\n# 3. Are there any patterns in where underserved counties are located?\ncounty_summary_map &lt;- pa_counties_proj %&gt;%\n  left_join(county_summary, by = \"COUNTY_NAM\")\n\n# Quick visualization\nggplot(county_summary_map) +\n  geom_sf(aes(fill = pct_und_tracts)) +\n  scale_fill_viridis_c(option = \"plasma\", na.value = \"grey90\") +\n  labs(\n    title = \"Percentage of Underserved Vulnerable Tracts by County\",\n    fill = \"% Underserved\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\nRequired county-level statistics: - Number of vulnerable tracts - Number of underserved tracts\n- Percentage of vulnerable tracts that are underserved - Average distance to nearest hospital for vulnerable tracts - Total vulnerable population\nQuestions to answer: - Which 5 counties have the highest percentage of underserved vulnerable tracts? - Which counties have the most vulnerable people living far from hospitals? - Are there any patterns in where underserved counties are located?\n\n\n\nStep 7: Create Summary Table\nCreate a professional table showing the top 10 priority counties for healthcare investment.\nYour Task:\n\n# Create and format priority counties table\ncounty_priority &lt;- county_summary %&gt;%\n  mutate(\n    priority_score = round((.5*scale(pct_und_tracts))+(.5*scale(total_vul_pop)), 2),\n  ) %&gt;%\n  arrange(desc(priority_score)) %&gt;%\n  slice_head(n = 10)\n\ncounty_priority %&gt;%\n  select(\n    County = COUNTY_NAM,\n    `Vulnerable Tracts` = num_vul_tracts,\n    `Underserved Tracts` = num_und_tracts,\n    `Underserved (%)` = pct_und_tracts,\n    `Avg Distance (mi)` = avg_vul_dist,\n    `Vulnerable Population` = total_vul_pop,\n    `Priority Score` = priority_score\n  ) %&gt;%\n  kable(\n    caption = \"Top 10 Priority Counties for Healthcare Investment in Pennsylvania&lt;br&gt;(Based on Vulnerable Populations and Hospital Access)\",\n    format = \"html\",\n    align = c(\"l\", \"r\", \"r\", \"r\", \"r\", \"r\")\n  ) %&gt;%\n  kable_styling(\n    bootstrap_options = c(\"striped\", \"hover\", \"condensed\"),\n    full_width = FALSE,\n    font_size = 13\n  ) %&gt;%\n  row_spec(0, bold = TRUE, background = \"#002855\", color = \"white\")\n\n\nTop 10 Priority Counties for Healthcare Investment in Pennsylvania\n(Based on Vulnerable Populations and Hospital Access)\n\n\nCounty\nVulnerable Tracts\nUnderserved Tracts\nUnderserved (%)\nAvg Distance (mi)\nVulnerable Population\nPriority Score\n\n\n\n\nWESTMORELAND\n22\n0\n0.00\n3.47\n60018\n1.62\n\n\nPERRY\n2\n2\n100.00\n17.53\n5800\n1.23\n\n\nFAYETTE\n16\n0\n0.00\n4.96\n49722\n1.20\n\n\nDAUPHIN\n1\n1\n100.00\n19.16\n4018\n1.16\n\n\nCLEARFIELD\n10\n3\n30.00\n12.80\n34060\n1.10\n\n\nALLEGHENY\n20\n0\n0.00\n2.61\n46795\n1.08\n\n\nMONROE\n1\n1\n100.00\n17.68\n1299\n1.05\n\n\nCOLUMBIA\n1\n1\n100.00\n16.91\n918\n1.03\n\n\nLUZERNE\n11\n1\n9.09\n3.98\n29629\n0.54\n\n\nWARREN\n9\n1\n11.11\n7.00\n27988\n0.51\n\n\n\n\n\nRequirements: - Use knitr::kable() or similar for formatting - Include descriptive column names - Format numbers appropriately (commas for population, percentages, etc.) - Add an informative caption - Sort by priority (you decide the metric)"
+  },
+  {
+    "objectID": "assignments/assignment_2/Luu_Jun_Assignment2.html#part-2-comprehensive-visualization",
+    "href": "assignments/assignment_2/Luu_Jun_Assignment2.html#part-2-comprehensive-visualization",
+    "title": "Assignment 2: Spatial Analysis and Visualization",
+    "section": "Part 2: Comprehensive Visualization",
+    "text": "Part 2: Comprehensive Visualization\nUsing the skills from Week 3 (Data Visualization), create publication-quality maps and charts.\n\nMap 1: County-Level Choropleth\nCreate a choropleth map showing healthcare access challenges at the county level.\nYour Task:\n\n# Create county-level access map\npa_counties_summary &lt;- pa_counties_proj %&gt;%\n  left_join(county_summary, by = \"COUNTY_NAM\")\n\nggplot() +\n  geom_sf(\n    data = pa_counties_summary,\n    aes(fill = pct_und_tracts),\n    color = \"white\",\n    size = 0.2\n  ) +\n  geom_sf(\n    data = pa_hospitals_proj,\n    fill = \"red\",\n    color = \"white\",\n    size = 1.2,\n    shape = 21,\n    stroke = 0.3,\n    alpha = 1\n  ) +\n  scale_fill_viridis_c(\n    option = \"plasma\",\n    name = \"% Underserved\\n(Vulnerable Tracts)\",\n    labels = function(x) paste0(x, \"%\"),\n    na.value = \"grey90\"\n  ) +\n  labs(\n    title = \"Healthcare Access Challenges in Pennsylvania by County\",\n    subtitle = \"Counties shaded by the % of underserved tracts\"\n  ) +\n  theme_void() +\n  theme(\n    plot.title = element_text(size = 16, face = \"bold\"),\n    plot.subtitle = element_text(size = 12, margin = margin(b = 10)),\n    plot.caption = element_text(size = 9, color = \"gray40\", hjust = 0),\n    legend.title = element_text(size = 11, face = \"bold\"),\n    legend.text = element_text(size = 9),\n    legend.position = \"right\"\n  )\n\n\n\n\n\n\n\n\nRequirements: - Fill counties by percentage of vulnerable tracts that are underserved - Include hospital locations as points - Use an appropriate color scheme - Include clear title, subtitle, and caption - Use theme_void() or similar clean theme - Add a legend with formatted labels\n\n\n\nMap 2: Detailed Vulnerability Map\nCreate a map highlighting underserved vulnerable tracts.\nYour Task:\n\n# Create detailed tract-level map\n\nggplot() +\n  geom_sf(\n    data = pa_counties_proj,\n    fill = \"grey95\",\n    color = \"white\",\n    size = 0.3\n  ) +\n  geom_sf(\n    data = pa_centroids,\n    aes(geometry = geometry),\n    color = \"grey85\",\n    size = 0.1,\n    alpha = 0.4\n  ) +\n  geom_sf(\n    data = pa_centroids %&gt;% filter(underserved == TRUE),\n    aes(geometry = geometry),\n    fill = \"blue\",\n    color = \"white\",\n    size = 0.15,\n    alpha = 0.8\n  ) +\n  geom_sf(\n    data = pa_hospitals_proj,\n    fill = \"red\",\n    color = \"white\",\n    size = 1.2,\n    shape = 21,\n    stroke = 0.3,\n    alpha = 1\n  ) +\n  labs(\n    title = \"Underserved Vulnerable Census Tracts in Pennsylvania\",\n    subtitle = \"Tracts with vulnerable populations located more than 15 miles from the nearest hospital\"\n  ) +\n  theme_void() +\n  theme(\n    plot.title = element_text(size = 16, face = \"bold\"),\n    plot.subtitle = element_text(size = 12, margin = margin(b = 10)),\n    plot.caption = element_text(size = 9, color = \"gray40\", hjust = 0),\n    legend.position = \"none\"\n  ) +\n  coord_sf(expand = FALSE)\n\n\n\n\n\n\n\n\nRequirements: - Show underserved vulnerable tracts in a contrasting color - Include county boundaries for context - Show hospital locations - Use appropriate visual hierarchy (what should stand out?) - Include informative title and subtitle\n\n\n\nChart: Distribution Analysis\nCreate a visualization showing the distribution of distances to hospitals for vulnerable populations.\nYour Task:\n\n# Create distribution visualization\nggplot(pa_centroids %&gt;% filter(vulnerable), \n       aes(x = nearest_hosp_mi, y = total_populationE)) +\n  geom_point(alpha = 0.6, color = \"blue\", size = 1.2) +\n  scale_y_continuous(labels = comma) +\n  labs(\n    title = \"Distance to Nearest Hospital vs. Vulnerable Population Size\",\n    x = \"Distance to Nearest Hospital (mi)\",\n    y = \"Vulnerable Population per Tract\",\n    caption = \"Each point represents a vulnerable census tract in Pennsylvania. Tracts farther from hospitals\\nwith larger vulnerable populations indicate high-priority areas for healthcare investment.\"\n\n  ) +\n  theme_minimal(base_size = 12)\n\n\n\n\n\n\n\n\nSuggested chart types: - Histogram or density plot of distances - Box plot comparing distances across regions - Bar chart of underserved tracts by county - Scatter plot of distance vs. vulnerable population size\nRequirements: - Clear axes labels with units - Appropriate title - Professional formatting - Brief interpretation (1-2 sentences as a caption or in text)"
+  },
+  {
+    "objectID": "assignments/assignment_2/Luu_Jun_Assignment2.html#part-3-bring-your-own-data-analysis",
+    "href": "assignments/assignment_2/Luu_Jun_Assignment2.html#part-3-bring-your-own-data-analysis",
+    "title": "Assignment 2: Spatial Analysis and Visualization",
+    "section": "Part 3: Bring Your Own Data Analysis",
+    "text": "Part 3: Bring Your Own Data Analysis\nChoose your own additional spatial dataset and conduct a supplementary analysis.\n\nChallenge Options\nChoose ONE of the following challenge exercises, or propose your own research question using OpenDataPhilly data (https://opendataphilly.org/datasets/).\nNote these are just loose suggestions to spark ideas - follow or make your own as the data permits and as your ideas evolve. This analysis should include bringing in your own dataset, ensuring the projection/CRS of your layers align and are appropriate for the analysis (not lat/long or geodetic coordinate systems). The analysis portion should include some combination of spatial and attribute operations to answer a relatively straightforward question\n\n\nEducation & Youth Services\nOption A: Educational Desert Analysis - Data: Schools, Libraries, Recreation Centers, Census tracts (child population) - Question: “Which neighborhoods lack adequate educational infrastructure for children?” - Operations: Buffer schools/libraries (0.5 mile walking distance), identify coverage gaps, overlay with child population density - Policy relevance: School district planning, library placement, after-school program siting\nOption B: School Safety Zones - Data: Schools, Crime Incidents, Bike Network - Question: “Are school zones safe for walking/biking, or are they crime hotspots?” - Operations: Buffer schools (1000ft safety zone), spatial join with crime incidents, assess bike infrastructure coverage - Policy relevance: Safe Routes to School programs, crossing guard placement\n\n\n\nEnvironmental Justice\nOption C: Green Space Equity - Data: Parks, Street Trees, Census tracts (race/income demographics) - Question: “Do low-income and minority neighborhoods have equitable access to green space?” - Operations: Buffer parks (10-minute walk = 0.5 mile), calculate tree canopy or park acreage per capita, compare by demographics - Policy relevance: Climate resilience, environmental justice, urban forestry investment —\n\n\nPublic Safety & Justice\nOption D: Crime & Community Resources - Data: Crime Incidents, Recreation Centers, Libraries, Street Lights - Question: “Are high-crime areas underserved by community resources?” - Operations: Aggregate crime counts to census tracts or neighborhoods, count community resources per area, spatial correlation analysis - Policy relevance: Community investment, violence prevention strategies —\n\n\nInfrastructure & Services\nOption E: Polling Place Accessibility - Data: Polling Places, SEPTA stops, Census tracts (elderly population, disability rates) - Question: “Are polling places accessible for elderly and disabled voters?” - Operations: Buffer polling places and transit stops, identify vulnerable populations, find areas lacking access - Policy relevance: Voting rights, election infrastructure, ADA compliance\n\n\n\nHealth & Wellness\nOption F: Recreation & Population Health - Data: Recreation Centers, Playgrounds, Parks, Census tracts (demographics) - Question: “Is lack of recreation access associated with vulnerable populations?” - Operations: Calculate recreation facilities per capita by neighborhood, buffer facilities for walking access, overlay with demographic indicators - Policy relevance: Public health investment, recreation programming, obesity prevention\n\n\n\nEmergency Services\nOption G: EMS Response Coverage - Data: Fire Stations, EMS stations, Population density, High-rise buildings - Question: “Are population-dense areas adequately covered by emergency services?” - Operations: Create service area buffers (5-minute drive = ~2 miles), assess population coverage, identify gaps in high-density areas - Policy relevance: Emergency preparedness, station siting decisions\n\n\n\nArts & Culture\nOption H: Cultural Asset Distribution - Data: Public Art, Museums, Historic sites/markers, Neighborhoods - Question: “Do all neighborhoods have equitable access to cultural amenities?” - Operations: Count cultural assets per neighborhood, normalize by population, compare distribution across demographic groups - Policy relevance: Cultural equity, tourism, quality of life, neighborhood identity\n\n\n\n\nData Sources\nOpenDataPhilly: https://opendataphilly.org/datasets/ - Most datasets available as GeoJSON, Shapefile, or CSV with coordinates - Always check the Metadata for a data dictionary of the fields.\nAdditional Sources: - Pennsylvania Open Data: https://data.pa.gov/ - Census Bureau (via tidycensus): Demographics, economic indicators, commute patterns - TIGER/Line (via tigris): Geographic boundaries\n\n\nRecommended Starting Points\nIf you’re feeling confident: Choose an advanced challenge with multiple data layers. If you are a beginner, choose something more manageable that helps you understand the basics\nIf you have a different idea: Propose your own question! Just make sure: - You can access the spatial data - You can perform at least 2 spatial operations\n\n\nYour Analysis\nYour Task:\n\nFind and load additional data\n\nDocument your data source\nCheck and standardize the CRS\nProvide basic summary statistics\n\n\n\n# Load your additional dataset\nrecreation_centers &lt;- st_read(\"https://opendata.arcgis.com/api/v3/datasets/9eb26a787a6e448ba426eea7f9f0d93a_0/downloads/data?format=geojson&spatialRefId=4326\")\n\nReading layer `PPR_Program_Sites' from data source \n  `https://opendata.arcgis.com/api/v3/datasets/9eb26a787a6e448ba426eea7f9f0d93a_0/downloads/data?format=geojson&spatialRefId=4326' \n  using driver `GeoJSON'\nSimple feature collection with 171 features and 10 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: -75.2563 ymin: 39.90444 xmax: -74.96944 ymax: 40.12284\nGeodetic CRS:  WGS 84\n\n#check crs\nst_crs(pa_centroids)\n\nCoordinate Reference System:\n  User input: EPSG:3365 \n  wkt:\nPROJCRS[\"NAD83(HARN) / Pennsylvania South (ftUS)\",\n    BASEGEOGCRS[\"NAD83(HARN)\",\n        DATUM[\"NAD83 (High Accuracy Reference Network)\",\n            ELLIPSOID[\"GRS 1980\",6378137,298.257222101,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4152]],\n    CONVERSION[\"SPCS83 Pennsylvania South zone (US survey foot)\",\n        METHOD[\"Lambert Conic Conformal (2SP)\",\n            ID[\"EPSG\",9802]],\n        PARAMETER[\"Latitude of false origin\",39.3333333333333,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8821]],\n        PARAMETER[\"Longitude of false origin\",-77.75,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8822]],\n        PARAMETER[\"Latitude of 1st standard parallel\",40.9666666666667,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8823]],\n        PARAMETER[\"Latitude of 2nd standard parallel\",39.9333333333333,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8824]],\n        PARAMETER[\"Easting at false origin\",1968500,\n            LENGTHUNIT[\"US survey foot\",0.304800609601219],\n            ID[\"EPSG\",8826]],\n        PARAMETER[\"Northing at false origin\",0,\n            LENGTHUNIT[\"US survey foot\",0.304800609601219],\n            ID[\"EPSG\",8827]]],\n    CS[Cartesian,2],\n        AXIS[\"easting (X)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"US survey foot\",0.304800609601219]],\n        AXIS[\"northing (Y)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"US survey foot\",0.304800609601219]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United States (USA) - Pennsylvania - counties of Adams; Allegheny; Armstrong; Beaver; Bedford; Berks; Blair; Bucks; Butler; Cambria; Chester; Cumberland; Dauphin; Delaware; Fayette; Franklin; Fulton; Greene; Huntingdon; Indiana; Juniata; Lancaster; Lawrence; Lebanon; Lehigh; Mifflin; Montgomery; Northampton; Perry; Philadelphia; Schuylkill; Snyder; Somerset; Washington; Westmoreland; York.\"],\n        BBOX[39.71,-80.53,41.18,-74.72]],\n    ID[\"EPSG\",3365]]\n\nst_crs(recreation_centers)\n\nCoordinate Reference System:\n  User input: WGS 84 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    ID[\"EPSG\",4326]]\n\n#only use philly data\nphila_centroids &lt;- pa_centroids %&gt;%\n  filter(COUNTYFP == \"101\")\n#transform crs\nrecreation_centers &lt;- st_transform(recreation_centers, st_crs(phila_centroids))\nsummary(recreation_centers)\n\n    OBJECTID       PARK_NAME          DPP_ASSET_ID  PROGRAM_TYPE      \n Min.   : 807.0   Length:171         Min.   :   4   Length:171        \n 1st Qu.: 993.5   Class :character   1st Qu.:1826   Class :character  \n Median :1036.0   Mode  :character   Median :1891   Mode  :character  \n Mean   :1027.6                      Mean   :1795                     \n 3rd Qu.:1078.5                      3rd Qu.:1952                     \n Max.   :1121.0                      Max.   :3479                     \n  SITE_CLASS          BUILDING             GYM            LABEL_NUMBER      \n Length:171         Length:171         Length:171         Length:171        \n Class :character   Class :character   Class :character   Class :character  \n Mode  :character   Mode  :character   Mode  :character   Mode  :character  \n                                                                            \n                                                                            \n                                                                            \n   COMMENTS         DATA_SOURCE                 geometry  \n Length:171         Length:171         POINT        :171  \n Class :character   Class :character   epsg:3365    :  0  \n Mode  :character   Mode  :character   +proj=lcc ...:  0  \n                                                          \n                                                          \n                                                          \n\n\nQuestions to answer: - What dataset did you choose and why? I chose the recreation center location data to look at the question, “Is lack of recreation access associated with vulnerable populations?” - What is the data source and date? The data source is OpenDataPhilly and the date created is March 2, 2022. - How many features does it contain? It contains 11 features. - What CRS is it in? Did you need to transform it? It is in WGS 84 and I did need to transform it.\n\n\nPose a research question\n\nWrite a clear research statement that your analysis will answer.”Is lack of recreation access associated with vulnerable populations?”\nExamples: - “Do vulnerable tracts have adequate public transit access to hospitals?” - “Are EMS stations appropriately located near vulnerable populations?” - “Do areas with low vehicle access have worse hospital access?”\n\n\nConduct spatial analysis\n\nUse at least TWO spatial operations to answer your research question.\nRequired operations (choose 2+): - Buffers - Spatial joins - Spatial filtering with predicates - Distance calculations - Intersections or unions - Point-in-polygon aggregation\nYour Task:\n\n# Your spatial analysis\nrec_buffer &lt;- st_buffer(recreation_centers, dist = 2640) #.5 miles\n#centroids of recreation centers\nphila_centroids &lt;- phila_centroids %&gt;%\n  mutate(\n    within_recreation_buffer = lengths(st_intersects(geometry, rec_buffer)) &gt; 0\n  )\n#seeing results for both vulnerable and not vulnerable \nrec_summary &lt;- phila_centroids %&gt;%\n  st_drop_geometry() %&gt;%\n  summarise(\n    total_tracts = n(),\n    tracts_with_access = sum(within_recreation_buffer, na.rm = TRUE),\n    total_vulnerable_tracts = sum(vulnerable, na.rm = TRUE),\n    vulnerable_with_access = sum(vulnerable & within_recreation_buffer, na.rm = TRUE),\n    vulnerable_without_access = sum(vulnerable & !within_recreation_buffer, na.rm = TRUE),\n    pct_vulnerable_with_access = round(vulnerable_with_access / total_vulnerable_tracts * 100, 1)\n  )\n\nrec_summary\n\n  total_tracts tracts_with_access total_vulnerable_tracts\n1          408                390                       2\n  vulnerable_with_access vulnerable_without_access pct_vulnerable_with_access\n1                      1                         1                         50\n\n\n\n#to see vulnerable on ggplot\nphila_centroids &lt;- phila_centroids %&gt;%\n  mutate(\n    vul_access_cat = case_when(\n      !vulnerable ~ \"Not vulnerable\",\n      vulnerable & within_recreation_buffer ~ \"Vulnerable w/ access\",\n      vulnerable & !within_recreation_buffer ~ \"Vulnerable w/o access\"\n    )\n  )\n\n\nggplot() +\n  # Plot tracts colored by vulnerability + access category\n  geom_sf(\n    data = phila_centroids,\n    aes(fill = vul_access_cat),\n    color = \"white\",\n    size = 0.1\n  ) +\n  \n  # Recreation center buffer used\n  geom_sf(\n    data = rec_buffer,\n    fill = \"blue\",\n    alpha = 0.2,\n    color = NA\n  ) +\n  \n  # Recreation centers\n  geom_sf(\n    data = recreation_centers,\n    color = \"blue\",\n    size = 1,\n    shape = 21,\n    fill = \"white\",\n    stroke = 0.6\n  ) +\n  \n  # County boundary outline\n  geom_sf(\n    data = st_union(phila_centroids),\n    fill = NA,\n    color = \"gray\",\n    linewidth = 0.6\n  ) +\n  \n  # colors for each category\n  scale_fill_manual(\n    values = c(\n      \"Not vulnerable\" = \"gray\",\n      \"Vulnerable w/o access\" = \"red\",\n      \"Vulnerable w/ access\" = \"green\"\n    ),\n    name = \"Tract Category\"\n  ) +\n  \n  labs(\n    title = \"Recreation Access for Vulnerable Populations in Philadelphia\",\n  ) +\n  \n  theme_void() +\n  theme(\n    plot.title = element_text(face = \"bold\", size = 16, hjust = 0.5),\n    plot.subtitle = element_text(size = 12, hjust = 0.5),\n    plot.caption = element_text(size = 9, hjust = 0.5),\n    legend.position = \"right\",\n    legend.title = element_text(size = 11),\n    legend.text = element_text(size = 10)\n  )\n\n\n\n\n\n\n\n\nAnalysis requirements: - Clear code comments explaining each step - Appropriate CRS transformations - Summary statistics or counts - At least one map showing your findings - Brief interpretation of results (3-5 sentences)\nYour interpretation:\nI hadn’t taken a look at the vulnerable tracts in Philadelphia specifically until part 3, which was interesting. There were a lot less vulnerable tracts in Philadelphia than I had originally assumed. Reviewing the recreation center locations, there are no centers in the vulnerable tracts. This could be due to lack of funding in these vulnerable tracts."
+  },
+  {
+    "objectID": "assignments/assignment_2/Luu_Jun_Assignment2.html#finally---a-few-comments-about-your-incorporation-of-feedback",
+    "href": "assignments/assignment_2/Luu_Jun_Assignment2.html#finally---a-few-comments-about-your-incorporation-of-feedback",
+    "title": "Assignment 2: Spatial Analysis and Visualization",
+    "section": "Finally - A few comments about your incorporation of feedback!",
+    "text": "Finally - A few comments about your incorporation of feedback!\nTake a few moments to clean up your markdown document and then write a line or two or three about how you may have incorporated feedback that you recieved after your first assignment.\nI hid the Census API key and data-loading code in a setup chunk, so it runs without cluttering the document, and instead I printed the key outputs (like tables and summaries) in the console or in formatted tables. This made the final report cleaner, easier to read, and more professional while keeping the analysis fully reproducible."
+  },
+  {
+    "objectID": "assignments/assignment_2/Luu_Jun_Assignment2.html#submission-requirements",
+    "href": "assignments/assignment_2/Luu_Jun_Assignment2.html#submission-requirements",
+    "title": "Assignment 2: Spatial Analysis and Visualization",
+    "section": "Submission Requirements",
+    "text": "Submission Requirements\nWhat to submit:\n\nRendered HTML document posted to your course portfolio with all code, outputs, maps, and text\n\nUse embed-resources: true in YAML so it’s a single file\nAll code should run without errors\nAll maps and charts should display correctly\n\n\nFile naming: LastName_FirstName_Assignment2.html and LastName_FirstName_Assignment2.qmd"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Welcome to my MUSA 5080 Portfolio! Please follow me on my journey through Public Policy Analytics (MUSA 5080). Hopefully I will be able to analyze spatial data and create meaningful visualizations at the end of this course :O\n\n\nAdvanced spatial analysis and data science for urban planning and public policy.\n\n\n\n\nWeekly Notes: My learning reflections and key concepts\nAssignments: Completed assignments and analyses\nFinal Project: Capstone modeling challenge\n\n\n\n\nHi, my name is Jun and I recently started my Masters of Urban Spatial Analytics at The University of Pennsylvania! My background is in affordable housing and community development construction engineering. Though I loved my work, I decided that I wanted to do research that would push new projects that I believe in instead of building the projects that had already been determined.\nTo learn more about my background, please refer to the “About” section located in the banner across the top of this page!\n\n\n\n\nEmail: jjluu@upenn.edu\nGitHub: jenniferluu6"
+  },
+  {
+    "objectID": "index.html#about-this-course",
+    "href": "index.html#about-this-course",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Advanced spatial analysis and data science for urban planning and public policy."
+  },
+  {
+    "objectID": "index.html#portfolio-structure",
+    "href": "index.html#portfolio-structure",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Weekly Notes: My learning reflections and key concepts\nAssignments: Completed assignments and analyses\nFinal Project: Capstone modeling challenge"
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Hi, my name is Jun and I recently started my Masters of Urban Spatial Analytics at The University of Pennsylvania! My background is in affordable housing and community development construction engineering. Though I loved my work, I decided that I wanted to do research that would push new projects that I believe in instead of building the projects that had already been determined.\nTo learn more about my background, please refer to the “About” section located in the banner across the top of this page!"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "MUSA 5080 Portfolio",
+    "section": "",
+    "text": "Email: jjluu@upenn.edu\nGitHub: jenniferluu6"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html",
+    "href": "weekly-notes/week-03-notes.html",
+    "title": "Week 3 notes",
+    "section": "",
+    "text": "Anscombe’s Quartet and the limits of summary statistics\n- Depending on the way information is visualized, it can show completely different patterns.\n- “How to lie with stats/maps”\n- Outliers may represent important communities\n- Relationships aren’t always linear\nExploratory Data Analysis is detective work\nData → Aesthetics → Geometries → Visual\n- Data: Your data set (census data, survey responses, etc.)\n- Aesthetics: What variables map to visual properties (x, y, color, size)\n- Geometries: How to display the data (points, bars, lines)\n- Additional layers: Scales, themes, facets, annotations"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#key-concepts-learned",
+    "href": "weekly-notes/week-03-notes.html#key-concepts-learned",
+    "title": "Week 3 notes",
+    "section": "",
+    "text": "Anscombe’s Quartet and the limits of summary statistics\n- Depending on the way information is visualized, it can show completely different patterns.\n- “How to lie with stats/maps”\n- Outliers may represent important communities\n- Relationships aren’t always linear\nExploratory Data Analysis is detective work\nData → Aesthetics → Geometries → Visual\n- Data: Your data set (census data, survey responses, etc.)\n- Aesthetics: What variables map to visual properties (x, y, color, size)\n- Geometries: How to display the data (points, bars, lines)\n- Additional layers: Scales, themes, facets, annotations"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#coding-techniques",
+    "href": "weekly-notes/week-03-notes.html#coding-techniques",
+    "title": "Week 3 notes",
+    "section": "Coding Techniques",
+    "text": "Coding Techniques\nggplot(data = your_data) +   aes(x = variable1, y = variable2) +   geom_something() +   additional_layers()\nAesthetics map data to visual properties:\n\nx, y - position\ncolor - point/line color\nfill - area fill color\nsize - point/line size\nshape - point shape\nalpha - transparency\nleft_join() - Keep all rows from left dataset\nright_join() - Keep all rows from right dataset\ninner_join() - Keep only rows that match in both\nfull_join() - Keep all rows from both datasets\n\nImportant: Aesthetics go inside aes(), constants go outside"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#questions-challenges",
+    "href": "weekly-notes/week-03-notes.html#questions-challenges",
+    "title": "Week 3 notes",
+    "section": "Questions & Challenges",
+    "text": "Questions & Challenges\nPattern: Smaller populations have higher uncertainty\nEthical implication: These communities might be systematically under counted\n\n\nReport the corresponding MOEs of ACS estimates - Always include margin of error values\nInclude a footnote when not reporting MOEs - Explicitly acknowledge omission\n\nProvide context for (un)reliability - Use coefficient of variation (CV):\n\nCV &lt; 12% = reliable (green coding)\nCV 12-40% = somewhat reliable (yellow)\nCV &gt; 40% = unreliable (red coding)\n\nReduce statistical uncertainty - Collapse data detail, aggregate geographies, use multi-year estimates\nAlways conduct statistical significance tests when comparing ACS estimates over time"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#connections-to-policy",
+    "href": "weekly-notes/week-03-notes.html#connections-to-policy",
+    "title": "Week 3 notes",
+    "section": "Connections to Policy",
+    "text": "Connections to Policy\nResearch finding: Only 27% of planners warn users about unreliable ACS data\n- Most planners don’t report margins of error\n- Many lack training on statistical uncertainty\nCommon problems in government data presentation:\n- Misleading scales or axes\n- Cherry-picked time periods\n- Hidden or ignored uncertainty\n- Missing context about data reliability"
+  },
+  {
+    "objectID": "weekly-notes/week-03-notes.html#reflection",
+    "href": "weekly-notes/week-03-notes.html#reflection",
+    "title": "Week 3 notes",
+    "section": "Reflection",
+    "text": "Reflection\nReminder to study through definitions more closely."
   },
   {
     "objectID": "weekly-notes/week-02-notes.html",
@@ -425,103 +565,5 @@
     "title": "Week 1 Notes - Course Introduction",
     "section": "Reflection",
     "text": "Reflection\nI am excited to learn how to use these things that we have learned on a project. I am interested in what a pipeline will look like for me."
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html",
-    "href": "weekly-notes/week-05-notes.html",
-    "title": "Week 5 notes",
-    "section": "",
-    "text": "The Statistical Learning Framework: What are we actually doing?\nTwo goals: Understanding relationships vs Making predictions\nBuilding your first model with PA census data\nModel evaluation: How do we know if it’s any good?\nChecking assumptions: When can we trust the model?\nImproving predictions: Transformations, multiple variables\n\nWe observe data: counties, income, population, education, etc.\nWe believe there’s some relationship between these variables."
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#key-concepts-learned",
-    "href": "weekly-notes/week-05-notes.html#key-concepts-learned",
-    "title": "Week 5 notes",
-    "section": "",
-    "text": "The Statistical Learning Framework: What are we actually doing?\nTwo goals: Understanding relationships vs Making predictions\nBuilding your first model with PA census data\nModel evaluation: How do we know if it’s any good?\nChecking assumptions: When can we trust the model?\nImproving predictions: Transformations, multiple variables\n\nWe observe data: counties, income, population, education, etc.\nWe believe there’s some relationship between these variables."
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#formalizing-the-relationship",
-    "href": "weekly-notes/week-05-notes.html#formalizing-the-relationship",
-    "title": "Week 5 notes",
-    "section": "Formalizing the Relationship",
-    "text": "Formalizing the Relationship\nFor any quantitative response Y and predictors X₁, X₂, … Xₚ:\n\\[Y = f(X) + \\epsilon\\]\nWhere:\n\nf = the systematic information X provides about Y\nε = random error (irreducible)"
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#how-do-we-estimate-f",
-    "href": "weekly-notes/week-05-notes.html#how-do-we-estimate-f",
-    "title": "Week 5 notes",
-    "section": "How Do We Estimate f?",
-    "text": "How Do We Estimate f?\nTwo broad approaches:\nParametric Methods\n\nMake an assumption about the functional form (e.g., linear)\nReduces problem to estimating a few parameters\nEasier to interpret\nThis is what we’ll focus on\n\nNon-Parametric Methods\n\nDon’t assume a specific form\nMore flexible\nRequire more data\nHarder to interpret\nParametric (blue): We assume f is linear, then estimate β₀ and β₁\nNon-parametric (green): We let the data determine the shape of f\n\nThe method: Ordinary Least Squares (OLS)"
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#why-linear-regression",
-    "href": "weekly-notes/week-05-notes.html#why-linear-regression",
-    "title": "Week 5 notes",
-    "section": "Why Linear Regression?",
-    "text": "Why Linear Regression?\nAdvantages:\n\nSimple and interpretable\nWell-understood properties\nWorks remarkably well for many problems\nFoundation for more complex methods\n\nLimitations:\n\nAssumes linearity (we’ll test this)\nSensitive to outliers\nMakes several assumptions (we’ll check these)"
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#interpreting-coefficients",
-    "href": "weekly-notes/week-05-notes.html#interpreting-coefficients",
-    "title": "Week 5 notes",
-    "section": "Interpreting Coefficients",
-    "text": "Interpreting Coefficients\nIntercept (β₀) = $62,855\n\nExpected income when population = 0\nNot usually meaningful in practice\n\nSlope (β₁) = $0.02\n\nFor each additional person, income increases by $0.02\nMore useful: For every 1,000 people, income increases by ~$20\n\nIs this relationship real?\n\np-value &lt; 0.001 → Very unlikely to see this if true β₁ = 0\nWe can reject the null hypothesis"
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#statistical-significance",
-    "href": "weekly-notes/week-05-notes.html#statistical-significance",
-    "title": "Week 5 notes",
-    "section": "Statistical Significance",
-    "text": "Statistical Significance\nThe logic:\n\nNull hypothesis (H₀): β₁ = 0 (no relationship)\nOur estimate: β₁ = 0.02\nQuestion: Could we get 0.02 just by chance if H₀ is true?\n\nt-statistic: How many standard errors away from 0?\n\nBigger |t| = more confidence the relationship is real\n\np-value: Probability of seeing our estimate if H₀ is true\n\nSmall p → reject H₀, conclude relationship exists\n\nKey Metrics (Averaged Across 10 Folds)\n\nRMSE: Typical prediction error (~$12,578)\nR²: % of variation explained (0.564)\nMAE: Average absolute error (~$8,860) - easier to interpret"
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#why-this-matters-for-prediction",
-    "href": "weekly-notes/week-05-notes.html#why-this-matters-for-prediction",
-    "title": "Week 5 notes",
-    "section": "Why This Matters for Prediction",
-    "text": "Why This Matters for Prediction\nLinearity violations hurt predictions, not just inference:\n\nIf the true relationship is curved and you fit a straight line, you’ll systematically underpredict in some regions and overpredict in others\nBiased predictions in predictable ways (not random errors!)\nResidual plots should show random scatter - any pattern means your model is missing something systematic\n\nInterpretation:\n\np &gt; 0.05: Constant variance assumption OK\np &lt; 0.05: Evidence of heteroscedasticity\n\nIf detected, solutions:\n\nTransform Y (try log(income))\nRobust standard errors\nAdd missing variables\nAccept it (point predictions still OK for prediction goals)\n\n\nCoding Techniques\nThe model: Predicted healthcare needs using costs as proxy\nTechnically: Probably had good R², low prediction error (good “fit”)\nEthically: Learned and amplified existing discrimination\nR² = 0.208\n“21% of variation in income is explained by population”"
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#questions-challenges",
-    "href": "weekly-notes/week-05-notes.html#questions-challenges",
-    "title": "Week 5 notes",
-    "section": "Questions & Challenges",
-    "text": "Questions & Challenges"
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#assumption-2-constant-variance",
-    "href": "weekly-notes/week-05-notes.html#assumption-2-constant-variance",
-    "title": "Week 5 notes",
-    "section": "Assumption 2: Constant Variance",
-    "text": "Assumption 2: Constant Variance\nHeteroscedasticity: Variance changes across X\nImpact: Standard errors are wrong → p-values misleading"
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#reflection",
-    "href": "weekly-notes/week-05-notes.html#reflection",
-    "title": "Week 5 notes",
-    "section": "Reflection",
-    "text": "Reflection\nWhat we assume: Residuals are normally distributed\nWhy it matters:\n\nLess critical for point predictions (unbiased regardless)\nImportant for confidence intervals and prediction intervals\nNeeded for valid hypothesis tests (t-tests, F-tests)"
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#assumption-3-no-multicollinearity",
-    "href": "weekly-notes/week-05-notes.html#assumption-3-no-multicollinearity",
-    "title": "Week 5 notes",
-    "section": "Assumption 3: No Multicollinearity",
-    "text": "Assumption 3: No Multicollinearity\nFor multiple regression: Predictors shouldn’t be too correlated\nWhy it matters: Coefficients become unstable, hard to interpret"
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#assumption-4-no-influential-outliers",
-    "href": "weekly-notes/week-05-notes.html#assumption-4-no-influential-outliers",
-    "title": "Week 5 notes",
-    "section": "Assumption 4: No Influential Outliers",
-    "text": "Assumption 4: No Influential Outliers\nNot all outliers are problems - only those with high leverage AND large residuals"
-  },
-  {
-    "objectID": "weekly-notes/week-05-notes.html#what-heteroskedasticity-tells-you",
-    "href": "weekly-notes/week-05-notes.html#what-heteroskedasticity-tells-you",
-    "title": "Week 5 notes",
-    "section": "What Heteroskedasticity Tells You",
-    "text": "What Heteroskedasticity Tells You\nOften a symptom of model misspecification:\n\nModel fits well for some values (e.g., small counties) but poorly for others (large counties)\nMay indicate missing variables that matter more at certain X values\nAsk: “What’s different about observations with large residuals?”\n\nExample: Population alone predicts income well in rural counties, but large urban counties need additional variables (education, industry) to predict accurately."
   }
 ]

@@ -1,7 +1,0 @@
----
-title: "Lab 2"
-format: html
----
----
-You're early! Come back to see when I upload my Lab 2 project. 
-

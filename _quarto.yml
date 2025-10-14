@@ -26,7 +26,7 @@ website:
         menu: 
           - href: assignments/assignment_1.qmd
             text: "Lab 1"
-          - href: assignments/lab-02.qmd
+          - href: assignments/assignment_2/Luu_Jun_Assignment2.qmd
             text: "Lab 2"         
           - href: assignments/lab-03.qmd
             text: "Lab 3"
