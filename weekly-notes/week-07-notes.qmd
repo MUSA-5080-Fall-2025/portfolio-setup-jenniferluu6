@@ -1,0 +1,140 @@
+---
+title: "Week 7 notes"
+date: "10/20/25"
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+## Key Concepts Learned
+The (n-1) Rule:
+One neighborhood is automatically chosen as the **reference category** (omitted)!
+R picks the first alphabetically unless you specify otherwise.
+
+### How to Read This Table
+**Reference Category:** Allston (automatically chosen - alphabetically first)
+**Structural Variables:**
+- **Living Area:** Each additional sq ft adds this amount (same for all neighborhoods)
+- **Bedrooms:** Effect of one more full bathroom (same for all neighborhoods)
+**Neighborhood Dummies:**
+- **Positive coefficient** = This neighborhood is MORE expensive than `r ref_neighborhood`
+- **Negative coefficient** = This neighborhood is LESS expensive than `r ref_neighborhood`
+- All else equal (same size, same bathrooms)
+
+**Signs of Non-Linearity:**
+
+- Curved residual plots
+- Diminishing returns
+- Accelerating effects
+- U-shaped or inverted-U patterns
+- Theoretical reasons
+
+⚠️ Can't Interpret Coefficients Directly!
+
+With Age², the effect of age is no longer constant. You need to calculate the marginal effect.
+Marginal effect of Age = β₁ + 2×β₂×Age
+This means the effect changes at every age!
+
+
+### Tobler's First Law of Geography
+
+::: {.callout-note icon=false appearance="simple"}
+# "Everything is related to everything else, but near things are more related than distant things"
+*- Waldo Tobler, 1970*
+
+### What This Means for House Prices
+
+- Crime **nearby** matters more than crime across the city
+- Parks **within walking distance** affect value
+- Your **immediate neighborhood** defines your market
+
+## Three Approaches to Spatial Features
+
+### 1️⃣ Buffer Aggregation
+**Count or sum** events within a defined distance
+
+*Example: Number of crimes within 500 feet*
+
+### 2️⃣ k-Nearest Neighbors (kNN)
+**Average distance** to k closest events
+
+*Example: Average distance to 3 nearest violent crimes*
+
+### 3️⃣ Distance to Specific Points
+**Straight-line distance** to important locations
+
+*Example: Distance to downtown, nearest T station*
+**Fixed Effects** = Categorical variables that capture **all unmeasured characteristics** of a group
+
+**In hedonic models:**
+
+- Each neighborhood gets its own dummy variable
+- Captures everything unique about that neighborhood we didn't explicitly measure
+
+**Three common validation approaches:**
+
+1. **Train/Test Split** - 80/20 split, simple but unstable
+2. **k-Fold Cross-Validation** - Split into k folds, train on k-1, test on 1, repeat
+3. **LOOCV** - Leave one observation out at a time (special case of *k*-fold)
+
+**Why CV?**
+
+- Tells us how well model predicts NEW data
+- More honest than in-sample R²
+- Helps detect overfitting
+
+## ⚠️ The Problem: Sparse Categories
+
+### When CV Fails with Categorical Variables
+**What happened?**
+
+1. Random split created 10 folds
+2. All "West End" sales ended up in ONE fold (the test fold)
+3. Training folds never saw "West End"
+4. Model can't predict for a category it never learned
+
+::: {.callout-important}
+### The Issue
+
+When neighborhoods have **very few sales** (<10), random CV splits can put all instances in the same fold, breaking the model.
+
+## Coding Techniques
+
+### Why transform CRS?
+- **4326** = WGS84 (lat/lon in degrees) - fine for display
+- **ESRI:102286** = MA State Plane (feet) - good for distance calculations
+
+
+## Questions & Challenges
+### ❌ Don't:
+- Add 50 variables at once
+- Ignore errors
+- Forget `st_drop_geometry()` for non-spatial operations
+- Skip sparse category check
+:::
+
+::: {.column width="50%"}
+### Common Errors
+
+**"Factor has new levels"**
+→ Group sparse categories
+
+**"Computationally singular"**
+→ Remove collinear variables
+
+**Very high RMSE**
+→ Check outliers, scale
+
+**CV takes forever**
+→ Simplify model or reduce folds
+
+**Negative R²**
+→ Model worse than mean, rethink variables
+
+
+## Reflection
+
+Example Scenarios:
+- **Housing:** Does square footage matter more in wealthy neighborhoods?
+- **Education:** Do tutoring effects vary by initial skill level?
+- **Public Health:** Do pollution effects differ by age?

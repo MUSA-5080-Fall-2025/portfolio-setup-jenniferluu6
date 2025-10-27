@@ -24,14 +24,18 @@ website:
             text: "Week 5" 
           - href: weekly-notes/week-06-notes.qmd
             text: "Week 6"
+          - href: weekly-notes/week-07-notes.qmd
+            text: "Week 7"
       - text: "Assignments"
         menu: 
           - href: assignments/assignment_1.qmd
             text: "Lab 1"
           - href: assignments/assignment_2/Luu_Jun_Assignment2.qmd
             text: "Lab 2"         
-          - href: assignments/lab-03.qmd
+          - href: assignments/assignment_3/Luu_Jun_Appendix.qmd
             text: "Lab 3"
+          - href: assignments/assignment_3/Luu_Jun_Slides.qmd
+            text: "Lab 3 - Presentation Slides"
           - href: assignments/lab-04.qmd
             text: "Lab 4"
           - href: assignments/lab-05.qmd
